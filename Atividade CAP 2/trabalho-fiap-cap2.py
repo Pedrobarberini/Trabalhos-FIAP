@@ -94,4 +94,4 @@ for alerta in reversed(pilha_alertas):
     print(alerta)
 
 
-# utilizei lambda para facilitar a estrutra do codigo, e também para deixar mais legível as funções de busca e ordenação. 
+# utilizei lambda para facilitar a estrutra do codigo, e também para deixar mais legível as funções de busca e ordenação. ass. predinho se quiserem mudar fiquem avontade mas avisa no commit, e da commit em outra branch sem ser a main pra não sobre escreve a main.
