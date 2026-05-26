@@ -94,13 +94,13 @@ git clone https://github.com/seu-usuario/seu-repositorio.git
 ### 2. Acesse a pasta do projeto
 
 ```bash
-cd colonia-marte
+cd Atividade CAP 3
 ```
 
 ### 3. Execute o sistema
 
 ```bash
-python main.py
+python Primeiros_Sistemas_da_Colônia.py
 ```
 
 ---
@@ -131,9 +131,3 @@ MODO DE OPERAÇÃO: NORMAL
 - Organização hierárquica de dados
 - Simulação de cenários
 - Boas práticas de programação
-
----
-
-## 👨‍💻 Autor
-
-Desenvolvido por Pedro Barberini.
