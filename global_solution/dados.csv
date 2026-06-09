@@ -1,0 +1,7 @@
+horario,geracao_solar,geracao_eolica,consumo,reserva_pct,temp_externa,radiacao,qualidade_com
+00:00,0,8,70,85,-60,baixa,90
+04:00,0,10,72,78,-65,baixa,88
+08:00,20,6,75,70,-40,media,85
+12:00,30,4,78,58,-20,alta,60
+16:00,22,5,80,44,-30,alta,35
+20:00,2,9,82,32,-55,alta,10
