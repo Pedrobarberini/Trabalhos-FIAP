@@ -1,0 +1,17 @@
+{
+  "sessions": [
+    {
+      "id": "IMPORT-001",
+      "source": "sems-import",
+      "user_id": "U302",
+      "unit_id": "302",
+      "vehicle_id": "V302",
+      "charger_id": "HCA01",
+      "start_at": "2026-09-28T05:00:00-03:00",
+      "end_at": "2026-09-28T06:00:00-03:00",
+      "status": "completed",
+      "start_meter_kwh": 100,
+      "end_meter_kwh": 105.2
+    }
+  ]
+}

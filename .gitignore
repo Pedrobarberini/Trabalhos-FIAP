@@ -1,0 +1,8 @@
+# Arquivos locais do protótipo Sprint 2
+Challenge_GOODWE_sprint2/node_modules/
+Challenge_GOODWE_sprint2/.venv/
+Challenge_GOODWE_sprint2/dist/
+Challenge_GOODWE_sprint2/data/*.sqlite*
+Challenge_GOODWE_sprint2/.env
+__pycache__/
+*.pyc

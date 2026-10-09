@@ -1,0 +1,43 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: chargeops
+      POSTGRES_USER: chargeops
+      POSTGRES_PASSWORD: chargeops_demo
+    volumes:
+      - chargeops_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U chargeops -d chargeops']
+      interval: 5s
+      timeout: 3s
+      retries: 15
+  ai:
+    build:
+      context: .
+      dockerfile: ai/Dockerfile
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'python',
+          '-c',
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8001/health')",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+  api:
+    build: .
+    ports:
+      - '127.0.0.1:3000:3000'
+    environment:
+      DATABASE_URL: postgresql://chargeops:chargeops_demo@postgres:5432/chargeops
+      AI_URL: http://ai:8001
+    depends_on:
+      postgres:
+        condition: service_healthy
+      ai:
+        condition: service_healthy
+volumes:
+  chargeops_db:
