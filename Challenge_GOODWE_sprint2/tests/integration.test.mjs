@@ -1,9 +1,12 @@
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
-import { openDatabase } from '../server/database.mjs';
-import { ChargeOps } from '../server/service.mjs';
-import { createHttpServer } from '../server/http.mjs';
-import { seed } from '../server/seed.mjs';
+import { fileURLToPath } from 'node:url';
+import { openDatabase } from '../server/infrastructure/database/index.mjs';
+import { createApplication } from '../server/bootstrap.mjs';
+import { IntelligenceClient } from '../server/infrastructure/intelligence/client.mjs';
+import { createHttpServer } from '../server/presentation/http/server.mjs';
+const testApplication = (database, url = process.env.AI_URL) =>
+  createApplication(database, { intelligence: new IntelligenceClient({ url }) });
 
 let db, service, server, base;
 const sample = {
@@ -33,9 +36,9 @@ async function request(path, body) {
 }
 before(async () => {
   db = await openDatabase({ path: ':memory:', url: '' });
-  service = new ChargeOps(db);
-  await seed(service);
-  server = createHttpServer(service);
+  service = testApplication(db);
+  await service.initializeDemo();
+  server = createHttpServer(service, { staticRoot: fileURLToPath(new URL('..', import.meta.url)) });
   await new Promise((r) => server.listen(0, '127.0.0.1', r));
   base = `http://127.0.0.1:${server.address().port}`;
 });
@@ -91,10 +94,10 @@ test('lote inválido é atômico e não deixa registros parciais', async () => {
   assert.equal((await db.query("SELECT id FROM sessions WHERE id = 'ATOMIC'")).length, 0);
 });
 test('indisponibilidade da IA bloqueia ingestão, sem liberação silenciosa', async () => {
-  const offline = new ChargeOps(db, 'http://127.0.0.1:1');
+  const offline = testApplication(db, 'http://127.0.0.1:1');
   await assert.rejects(
     () =>
-      offline.ingest([
+      offline.sessions.register([
         {
           ...sample,
           id: 'OFFLINE',
@@ -102,14 +105,14 @@ test('indisponibilidade da IA bloqueia ingestão, sem liberação silenciosa', a
           end_at: '2026-09-26T06:00:00-03:00',
         },
       ]),
-    (error) => error.status === 503,
+    (error) => error.code === 'service_unavailable',
   );
   assert.equal((await db.query("SELECT id FROM sessions WHERE id = 'OFFLINE'")).length, 0);
   const startup = await openDatabase({ path: ':memory:', url: '' });
   try {
     await assert.rejects(
-      () => seed(new ChargeOps(startup, 'http://127.0.0.1:1')),
-      (error) => error.status === 503,
+      () => testApplication(startup, 'http://127.0.0.1:1').initializeDemo(),
+      (error) => error.code === 'service_unavailable',
     );
     assert.equal((await startup.query('SELECT id FROM units')).length, 0);
     assert.equal((await startup.query('SELECT id FROM sessions')).length, 0);
@@ -133,10 +136,10 @@ test('ingestões concorrentes com o mesmo ID resultam em uma única sessão', as
 test('sem histórico suficiente a IA exige revisão, em vez de marcar como normal', async () => {
   const empty = await openDatabase({ path: ':memory:', url: '' });
   try {
-    const result = await service.ai('/analyze', {
-      history: [],
-      candidates: [{ id: 'COLD', energy_wh: 5200, duration_minutes: 60, reasons: [] }],
-    });
+    const result = await service.intelligence.analyze(
+      [],
+      [{ id: 'COLD', energy_wh: 5200, duration_minutes: 60, reasons: [] }],
+    );
     assert.equal(result.results[0].review_status, 'pending');
     assert.equal(result.results[0].score, null);
   } finally {
@@ -162,7 +165,9 @@ test('não aprova registro sem leitura e exige justificativa na revisão', async
   );
 });
 test('rejeição preserva registro original e trilha de auditoria', async () => {
-  const pending = (await service.sessions('2026-09')).filter((s) => s.review_status === 'pending');
+  const pending = (await service.sessions.list('2026-09')).filter(
+    (s) => s.review_status === 'pending',
+  );
   for (const session of pending)
     assert.equal(
       (
@@ -240,4 +245,13 @@ test('API valida JSON, meses, lote vazio e origem de mutações', async () => {
     ).status,
     403,
   );
+});
+
+test('servidor entrega a aplicação e diferencia rotas de arquivos ausentes', async () => {
+  const home = await fetch(base + '/');
+  assert.equal(home.status, 200);
+  assert.match(home.headers.get('content-type'), /text\/html/);
+  assert.match(await home.text(), /id="root"/);
+  assert.equal((await fetch(base + '/arquivo-inexistente.js')).status, 404);
+  assert.equal((await fetch(base + '/api/inexistente')).status, 404);
 });

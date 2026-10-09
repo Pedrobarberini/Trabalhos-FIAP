@@ -1,20 +1,36 @@
-import { openDatabase } from './database.mjs';
-import { ChargeOps } from './service.mjs';
-import { seed } from './seed.mjs';
-import { createHttpServer } from './http.mjs';
+import { loadConfig } from './config.mjs';
+import { openDatabase } from './infrastructure/database/index.mjs';
+import { IntelligenceClient } from './infrastructure/intelligence/client.mjs';
+import { createApplication } from './bootstrap.mjs';
+import { createHttpServer } from './presentation/http/server.mjs';
 
-const db = await openDatabase();
-const service = new ChargeOps(db);
-await seed(service);
-const server = createHttpServer(service);
-const port = Number(process.env.PORT || 3000);
-server.listen(port, process.env.HOST || '127.0.0.1', () =>
-  console.log(`EV ChargeOps: http://localhost:${port}`),
-);
-for (const signal of ['SIGINT', 'SIGTERM'])
-  process.on(signal, () =>
-    server.close(async () => {
-      await db.close();
-      process.exit(0);
-    }),
+const config = loadConfig();
+const database = await openDatabase(config.database);
+try {
+  const app = createApplication(database, {
+    intelligence: new IntelligenceClient(config.intelligence),
+  });
+  await app.initializeDemo();
+  const server = createHttpServer(app);
+  server.listen(config.port, config.host, () =>
+    console.log(`EV ChargeOps: http://localhost:${config.port}`),
   );
+  let closing = false;
+  async function stop() {
+    if (closing) return;
+    closing = true;
+    server.closeAllConnections();
+    await new Promise((resolve) => server.close(resolve));
+    await database.close();
+  }
+  for (const signal of ['SIGINT', 'SIGTERM'])
+    process.once(signal, () => stop().then(() => process.exit(0)));
+  server.once('error', async (error) => {
+    console.error(error.message);
+    await stop();
+    process.exitCode = 1;
+  });
+} catch (error) {
+  await database.close();
+  throw error;
+}

@@ -1,6 +1,8 @@
 import { existsSync } from 'node:fs';
 import { python, run, completion, waitFor } from './runtime.mjs';
+import { loadConfig } from '../server/config.mjs';
 
+const config = loadConfig();
 const children = [];
 function stop() {
   for (const child of children) child.kill();
@@ -17,11 +19,11 @@ try {
     );
     if (code) process.exit(code);
   }
-  if (!process.env.AI_URL) {
+  if (!config.externalIntelligence) {
     const ai = run(python(), ['ai/service.py']);
     children.push(ai);
-    await waitFor(`http://127.0.0.1:${process.env.AI_PORT || 8001}/health`, ai);
-    process.env.AI_URL = `http://127.0.0.1:${process.env.AI_PORT || 8001}`;
+    await waitFor(`${config.intelligence.url}/health`, ai);
+    process.env.AI_URL = config.intelligence.url;
   }
   const api = run(process.execPath, ['server/index.mjs']);
   children.push(api);

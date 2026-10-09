@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { normalizeSession, consumptionCents, scaled } from '../server/domain.mjs';
+import { normalizeSession } from '../server/domain/session.mjs';
+import { consumptionCents } from '../server/domain/billing.mjs';
+import { scaled } from '../server/domain/values.mjs';
 
 const vehicle = { id: 'V1', user_id: 'U1' },
   user = { id: 'U1', unit_id: '302' },

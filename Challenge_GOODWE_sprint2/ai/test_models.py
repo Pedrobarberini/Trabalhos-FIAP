@@ -1,6 +1,8 @@
 import unittest
 from datetime import datetime, timedelta
-from models import analyze, forecast, ZONE
+from anomaly import analyze
+from forecasting import forecast
+from config import ZONE
 
 
 def history():

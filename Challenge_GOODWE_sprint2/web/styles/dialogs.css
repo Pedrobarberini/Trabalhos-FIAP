@@ -1,0 +1,71 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #122c27aa;
+  backdrop-filter: blur(4px);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.modal {
+  background: #fffef9;
+  width: 580px;
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 15px;
+  padding: 32px;
+  position: relative;
+  box-shadow: 0 20px 90px #14281c22;
+}
+.modal-close {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  background: transparent;
+  color: #8c997d;
+}
+.modal h2 {
+  font-size: 25px;
+  margin: 12px 0;
+}
+.modal p {
+  font-size: 11px;
+}
+.modal form > label {
+  margin: 19px 0;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+  margin-top: 23px;
+}
+.form-grid input,
+.form-grid select {
+  width: 100%;
+}
+.full {
+  width: 100%;
+  margin-top: 10px;
+  min-height: 42px;
+}
+.review-reasons {
+  background: #f8f2e5;
+  border: 1px solid #eee2c6;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 23px 0;
+}
+.review-reasons p {
+  color: #9b8b60;
+  font-size: 11px;
+  line-height: 1.6;
+  margin: 5px 0;
+}
+.form-error {
+  color: #a35e4c !important;
+  font-size: 11px;
+  padding: 10px 0;
+}
