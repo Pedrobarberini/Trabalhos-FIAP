@@ -1,0 +1,7 @@
+id_registro,ciclo,data_registro,nome_modulo,tipo_modulo,codigo_sensor,latencia_prevista_ms,latencia_observada_ms,tensao_v,corrente_a,potencia_w,status,prioridade,mensagem_alerta,motivo_rejeicao
+16,C006,2026-04-05,Relay Orbital Siger-1,comunicacao,SNS-0x1A02,186.21,,47.83,3.094,147.97,ativo,1,Enlace essencial com leve atraso - monitorar,latencia_observada_ms: ausente ou não finito
+66,C006,2026-04-05,Habitacao Sul,habitacao,SNS-0x1A07,63.86,,23.08,1.754,40.48,ativo,2,Operacao nominal,latencia_observada_ms: ausente ou não finito
+56,C006,2026-04-05,Habitacao Norte,habitacao,SNS-0x1A06,59.9,,24.6,1.851,45.54,ativo,2,Operacao nominal,latencia_observada_ms: ausente ou não finito
+24,C004,2026-03-22,Relay Orbital Siger-2,comunicacao,SNS-0x1A03,195.09,,47.6,2.879,137.07,alerta,2,Desvio de latencia acima do limite operacional,latencia_observada_ms: ausente ou não finito
+127,C007,2026-04-12,Bloco Cirurgico,suporte_medico,SNS-0x1A0D,50.98,,23.59,3.764,88.81,ativo,1,Enlace essencial com leve atraso - monitorar,latencia_observada_ms: ausente ou não finito
+88,C008,2026-04-19,Estufa Hidroponica 2,agricultura,SNS-0x1A09,79.75,,23.64,2.257,53.36,alerta,3,Desvio de latencia acima do limite operacional,latencia_observada_ms: ausente ou não finito

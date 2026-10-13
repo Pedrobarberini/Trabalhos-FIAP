@@ -1,0 +1,16 @@
+nome_modulo,codigo_sensor,ciclo,latencia_prevista_ms,estimativa_proximo_ciclo_ms,metodo,previsao_fisicamente_valida
+Antena Central Aurora,SNS-0x1A01,C011,118.25,118.25,referencia,True
+Bloco Cirurgico,SNS-0x1A0D,C011,51.37,51.37,referencia,True
+Deposito Criogenico,SNS-0x1A0E,C011,71.82,71.82,referencia,True
+Enfermaria Central,SNS-0x1A0C,C011,55.67,55.67,referencia,True
+Estufa Hidroponica 1,SNS-0x1A08,C011,75.63,75.63,referencia,True
+Estufa Hidroponica 2,SNS-0x1A09,C011,77.29,77.29,referencia,True
+Habitacao Norte,SNS-0x1A06,C011,61.27,61.27,referencia,True
+Habitacao Sul,SNS-0x1A07,C011,60.55,60.55,referencia,True
+Laboratorio Biologico,SNS-0x1A0B,C011,95.77,95.77,referencia,True
+Laboratorio Geologico,SNS-0x1A0A,C011,98.38,98.38,referencia,True
+Nucleo de Dados Alfa,SNS-0x1A04,C011,46.09,46.09,referencia,True
+Nucleo de Dados Beta,SNS-0x1A05,C011,48.15,48.15,referencia,True
+Oficina de Manutencao,SNS-0x1A0F,C011,104.0,104.0,referencia,True
+Relay Orbital Siger-1,SNS-0x1A02,C011,181.1,181.1,referencia,True
+Relay Orbital Siger-2,SNS-0x1A03,C011,186.74,186.74,referencia,True

@@ -1,0 +1,2016 @@
+{
+  "qualidade": {
+    "linhas_originais": 154,
+    "duplicatas_removidas": 4,
+    "registros_rejeitados": 6,
+    "registros_validos": 144,
+    "modulos": 15,
+    "ciclos": 10
+  },
+  "indicadores": {
+    "latencia_media_ms": 94.9582638888889,
+    "latencia_p95_ms": 192.5435,
+    "erro_absoluto_medio_ms": 11.117569444444444,
+    "erro_absoluto_mediano_ms": 4.635000000000009,
+    "erro_absoluto_maximo_ms": 277.65,
+    "erro_relativo_medio_pct": 8.726236700931844,
+    "erros_criticos": 21,
+    "degradacoes_criticas": 9,
+    "alertas_informados": 37,
+    "manutencoes": 8,
+    "leituras_relativo_indefinido": 0
+  },
+  "precisao": {
+    "soma_decimal": 0.30000000000000004,
+    "igualdade_exata": false,
+    "igualdade_com_tolerancia": true,
+    "soma_direta": 13673.99,
+    "soma_inversa": 13673.99,
+    "soma_compensada": 13673.99,
+    "menor_latencia_ms": 38.85,
+    "erro_resolucao_maximo_pct": 0.01287001287001287,
+    "desvio_mediano_pct": 5.065529070580203
+  },
+  "potencia": {
+    "registros": 144,
+    "coerentes": 144,
+    "incoerentes": 0,
+    "diferenca_media_w": 0.011024652777778175,
+    "diferenca_maxima_w": 0.033799999999999386,
+    "tolerancia_maxima_w": 0.0448425
+  },
+  "avaliacao": {
+    "atributos": [
+      "latencia_prevista_ms",
+      "numero_ciclo"
+    ],
+    "alvo": "latencia_observada_ms",
+    "preferido_na_validacao": "referencia",
+    "particoes": {
+      "treino": {
+        "registros": 86,
+        "ciclos": [
+          "C001",
+          "C002",
+          "C003",
+          "C004",
+          "C005",
+          "C006"
+        ]
+      },
+      "validacao": {
+        "registros": 28,
+        "ciclos": [
+          "C007",
+          "C008"
+        ]
+      },
+      "teste": {
+        "registros": 30,
+        "ciclos": [
+          "C009",
+          "C010"
+        ]
+      }
+    },
+    "validacao": {
+      "regressao_linear": {
+        "mae_ms": 14.345524515157134,
+        "mse_ms2": 439.8991052972123,
+        "rmse_ms": 20.973771842403842,
+        "r2": 0.7836932525517462
+      },
+      "referencia": {
+        "mae_ms": 5.6239285714285705,
+        "mse_ms2": 49.08821785714286,
+        "rmse_ms": 7.0062984419123095,
+        "r2": 0.9758623906826638
+      }
+    },
+    "teste": {
+      "regressao_linear": {
+        "mae_ms": 11.229431369440729,
+        "mse_ms2": 299.76059821369097,
+        "rmse_ms": 17.3135957621082,
+        "r2": 0.8640198972157062
+      },
+      "referencia": {
+        "mae_ms": 9.379999999999999,
+        "mse_ms2": 243.06616666666667,
+        "rmse_ms": 15.590579420491936,
+        "r2": 0.8897381359535597
+      }
+    },
+    "coeficientes": {
+      "latencia_prevista_ms": 1.2122824470404825,
+      "numero_ciclo": -1.2741197418823709
+    },
+    "intercepto": -6.017111977188236
+  },
+  "eletricidade": {
+    "modulo": "Antena Central Aurora",
+    "sensor": {
+      "codigo": "SNS-0x1A01",
+      "decimal": 6657,
+      "binario": "0001101000000001",
+      "hexadecimal": "0x1A01"
+    },
+    "tensao_v": 48.38,
+    "corrente_a": 2.244,
+    "potencia_calculada_w": 108.56472000000002,
+    "potencia_gravada_w": 108.55,
+    "resistencia_equivalente_ohm": 21.55971479500891
+  },
+  "alertas": [
+    {
+      "id_registro": 12,
+      "modulo": "Relay Orbital Siger-1",
+      "ciclo": "C002",
+      "nivel": 1,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 8,
+      "erro_relativo": 0.5009478040315045,
+      "motivo": "Latência maior que a referência com erro relativo acima de 15%."
+    },
+    {
+      "id_registro": 16,
+      "modulo": "Relay Orbital Siger-1",
+      "ciclo": "C006",
+      "nivel": 1,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 4,
+      "erro_relativo": 0.0,
+      "motivo": "Falha de qualidade da telemetria: latencia_observada_ms: ausente ou não finito"
+    },
+    {
+      "id_registro": 127,
+      "modulo": "Bloco Cirurgico",
+      "ciclo": "C007",
+      "nivel": 1,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 3,
+      "erro_relativo": 0.0,
+      "motivo": "Falha de qualidade da telemetria: latencia_observada_ms: ausente ou não finito"
+    },
+    {
+      "id_registro": 23,
+      "modulo": "Relay Orbital Siger-2",
+      "ciclo": "C003",
+      "nivel": 1,
+      "prioridade_modulo": 2,
+      "idade_ciclos": 7,
+      "erro_relativo": 0.5982031283664412,
+      "motivo": "Latência maior que a referência com erro relativo acima de 15%."
+    },
+    {
+      "id_registro": 24,
+      "modulo": "Relay Orbital Siger-2",
+      "ciclo": "C004",
+      "nivel": 1,
+      "prioridade_modulo": 2,
+      "idade_ciclos": 6,
+      "erro_relativo": 0.0,
+      "motivo": "Falha de qualidade da telemetria: latencia_observada_ms: ausente ou não finito"
+    },
+    {
+      "id_registro": 66,
+      "modulo": "Habitacao Sul",
+      "ciclo": "C006",
+      "nivel": 1,
+      "prioridade_modulo": 2,
+      "idade_ciclos": 4,
+      "erro_relativo": 0.0,
+      "motivo": "Falha de qualidade da telemetria: latencia_observada_ms: ausente ou não finito"
+    },
+    {
+      "id_registro": 56,
+      "modulo": "Habitacao Norte",
+      "ciclo": "C006",
+      "nivel": 1,
+      "prioridade_modulo": 2,
+      "idade_ciclos": 4,
+      "erro_relativo": 0.0,
+      "motivo": "Falha de qualidade da telemetria: latencia_observada_ms: ausente ou não finito"
+    },
+    {
+      "id_registro": 69,
+      "modulo": "Habitacao Sul",
+      "ciclo": "C009",
+      "nivel": 1,
+      "prioridade_modulo": 2,
+      "idade_ciclos": 1,
+      "erro_relativo": 0.40995552190782625,
+      "motivo": "Latência maior que a referência com erro relativo acima de 15%."
+    },
+    {
+      "id_registro": 105,
+      "modulo": "Laboratorio Biologico",
+      "ciclo": "C005",
+      "nivel": 1,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 5,
+      "erro_relativo": 0.4696453504607652,
+      "motivo": "Latência maior que a referência com erro relativo acima de 15%."
+    },
+    {
+      "id_registro": 88,
+      "modulo": "Estufa Hidroponica 2",
+      "ciclo": "C008",
+      "nivel": 1,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 2,
+      "erro_relativo": 0.0,
+      "motivo": "Falha de qualidade da telemetria: latencia_observada_ms: ausente ou não finito"
+    },
+    {
+      "id_registro": 79,
+      "modulo": "Estufa Hidroponica 1",
+      "ciclo": "C009",
+      "nivel": 1,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 1,
+      "erro_relativo": 0.4606069779762355,
+      "motivo": "Latência maior que a referência com erro relativo acima de 15%."
+    },
+    {
+      "id_registro": 49,
+      "modulo": "Nucleo de Dados Beta",
+      "ciclo": "C009",
+      "nivel": 1,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 1,
+      "erro_relativo": 0.15149892933618847,
+      "motivo": "Latência maior que a referência com erro relativo acima de 15%."
+    },
+    {
+      "id_registro": 50,
+      "modulo": "Nucleo de Dados Beta",
+      "ciclo": "C010",
+      "nivel": 1,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 0,
+      "erro_relativo": 0.2081894425259004,
+      "motivo": "Latência maior que a referência com erro relativo acima de 15%."
+    },
+    {
+      "id_registro": 132,
+      "modulo": "Deposito Criogenico",
+      "ciclo": "C002",
+      "nivel": 1,
+      "prioridade_modulo": 4,
+      "idade_ciclos": 8,
+      "erro_relativo": 0.5925149700598803,
+      "motivo": "Latência maior que a referência com erro relativo acima de 15%."
+    },
+    {
+      "id_registro": 96,
+      "modulo": "Laboratorio Geologico",
+      "ciclo": "C006",
+      "nivel": 1,
+      "prioridade_modulo": 4,
+      "idade_ciclos": 4,
+      "erro_relativo": 0.5870167512041261,
+      "motivo": "Latência maior que a referência com erro relativo acima de 15%."
+    },
+    {
+      "id_registro": 11,
+      "modulo": "Relay Orbital Siger-1",
+      "ciclo": "C001",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 9,
+      "erro_relativo": 0.05704403489752729,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Enlace essencial com leve atraso - monitorar"
+    },
+    {
+      "id_registro": 32,
+      "modulo": "Nucleo de Dados Alfa",
+      "ciclo": "C002",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 8,
+      "erro_relativo": 0.09266876360996851,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 113,
+      "modulo": "Enfermaria Central",
+      "ciclo": "C003",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 7,
+      "erro_relativo": 0.21524362986142143,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 33,
+      "modulo": "Nucleo de Dados Alfa",
+      "ciclo": "C003",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 7,
+      "erro_relativo": 0.09558525718914553,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 3,
+      "modulo": "Antena Central Aurora",
+      "ciclo": "C003",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 7,
+      "erro_relativo": 0.06268050893763183,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Enlace essencial com leve atraso - monitorar"
+    },
+    {
+      "id_registro": 35,
+      "modulo": "Nucleo de Dados Alfa",
+      "ciclo": "C005",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 5,
+      "erro_relativo": 0.17323037323037313,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 125,
+      "modulo": "Bloco Cirurgico",
+      "ciclo": "C005",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 5,
+      "erro_relativo": 0.15445026178010465,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 115,
+      "modulo": "Enfermaria Central",
+      "ciclo": "C005",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 5,
+      "erro_relativo": 0.05955036897202687,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Enlace essencial com leve atraso - monitorar"
+    },
+    {
+      "id_registro": 15,
+      "modulo": "Relay Orbital Siger-1",
+      "ciclo": "C005",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 5,
+      "erro_relativo": 0.05584251606978873,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 5,
+      "modulo": "Antena Central Aurora",
+      "ciclo": "C005",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 5,
+      "erro_relativo": 0.05008347245409024,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Enlace essencial com leve atraso - monitorar"
+    },
+    {
+      "id_registro": 36,
+      "modulo": "Nucleo de Dados Alfa",
+      "ciclo": "C006",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 4,
+      "erro_relativo": 0.06387434554973816,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Enlace essencial com leve atraso - monitorar"
+    },
+    {
+      "id_registro": 7,
+      "modulo": "Antena Central Aurora",
+      "ciclo": "C007",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 3,
+      "erro_relativo": 0.05947897049591964,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Enlace essencial com leve atraso - monitorar"
+    },
+    {
+      "id_registro": 118,
+      "modulo": "Enfermaria Central",
+      "ciclo": "C008",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 2,
+      "erro_relativo": 0.18241469816272973,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 8,
+      "modulo": "Antena Central Aurora",
+      "ciclo": "C008",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 2,
+      "erro_relativo": 0.1200563923721897,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 128,
+      "modulo": "Bloco Cirurgico",
+      "ciclo": "C008",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 2,
+      "erro_relativo": 0.0989690721649484,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 9,
+      "modulo": "Antena Central Aurora",
+      "ciclo": "C009",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 1,
+      "erro_relativo": 0.10525537733757111,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 119,
+      "modulo": "Enfermaria Central",
+      "ciclo": "C009",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 1,
+      "erro_relativo": 0.07527515723270436,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 10,
+      "modulo": "Antena Central Aurora",
+      "ciclo": "C010",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 0,
+      "erro_relativo": 0.12355469908093678,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 130,
+      "modulo": "Bloco Cirurgico",
+      "ciclo": "C010",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 0,
+      "erro_relativo": 0.08973271107339832,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 40,
+      "modulo": "Nucleo de Dados Alfa",
+      "ciclo": "C010",
+      "nivel": 2,
+      "prioridade_modulo": 1,
+      "idade_ciclos": 0,
+      "erro_relativo": 0.07661761270731139,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 51,
+      "modulo": "Habitacao Norte",
+      "ciclo": "C001",
+      "nivel": 2,
+      "prioridade_modulo": 2,
+      "idade_ciclos": 9,
+      "erro_relativo": 0.16048418586489652,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 61,
+      "modulo": "Habitacao Sul",
+      "ciclo": "C001",
+      "nivel": 2,
+      "prioridade_modulo": 2,
+      "idade_ciclos": 9,
+      "erro_relativo": 0.08927038626609447,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 22,
+      "modulo": "Relay Orbital Siger-2",
+      "ciclo": "C002",
+      "nivel": 2,
+      "prioridade_modulo": 2,
+      "idade_ciclos": 8,
+      "erro_relativo": 0.05858277035356771,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 65,
+      "modulo": "Habitacao Sul",
+      "ciclo": "C005",
+      "nivel": 2,
+      "prioridade_modulo": 2,
+      "idade_ciclos": 5,
+      "erro_relativo": 0.2024358737774497,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 55,
+      "modulo": "Habitacao Norte",
+      "ciclo": "C005",
+      "nivel": 2,
+      "prioridade_modulo": 2,
+      "idade_ciclos": 5,
+      "erro_relativo": 0.09337989675068324,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 27,
+      "modulo": "Relay Orbital Siger-2",
+      "ciclo": "C007",
+      "nivel": 2,
+      "prioridade_modulo": 2,
+      "idade_ciclos": 3,
+      "erro_relativo": 0.05048640558742817,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 58,
+      "modulo": "Habitacao Norte",
+      "ciclo": "C008",
+      "nivel": 2,
+      "prioridade_modulo": 2,
+      "idade_ciclos": 2,
+      "erro_relativo": 0.25484136794396367,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 28,
+      "modulo": "Relay Orbital Siger-2",
+      "ciclo": "C008",
+      "nivel": 2,
+      "prioridade_modulo": 2,
+      "idade_ciclos": 2,
+      "erro_relativo": 0.05370140723567158,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 70,
+      "modulo": "Habitacao Sul",
+      "ciclo": "C010",
+      "nivel": 2,
+      "prioridade_modulo": 2,
+      "idade_ciclos": 0,
+      "erro_relativo": 0.20689655172413784,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 60,
+      "modulo": "Habitacao Norte",
+      "ciclo": "C010",
+      "nivel": 2,
+      "prioridade_modulo": 2,
+      "idade_ciclos": 0,
+      "erro_relativo": 0.07209098862642178,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 81,
+      "modulo": "Estufa Hidroponica 2",
+      "ciclo": "C001",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 9,
+      "erro_relativo": 0.1344573533578917,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 71,
+      "modulo": "Estufa Hidroponica 1",
+      "ciclo": "C001",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 9,
+      "erro_relativo": 0.07243582017596728,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 41,
+      "modulo": "Nucleo de Dados Beta",
+      "ciclo": "C001",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 9,
+      "erro_relativo": 0.05089621597698615,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 102,
+      "modulo": "Laboratorio Biologico",
+      "ciclo": "C002",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 8,
+      "erro_relativo": 0.09784444223701211,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 82,
+      "modulo": "Estufa Hidroponica 2",
+      "ciclo": "C002",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 8,
+      "erro_relativo": 0.05040689906473936,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 73,
+      "modulo": "Estufa Hidroponica 1",
+      "ciclo": "C003",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 7,
+      "erro_relativo": 0.1707390196372358,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 103,
+      "modulo": "Laboratorio Biologico",
+      "ciclo": "C003",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 7,
+      "erro_relativo": 0.1535882791159671,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 43,
+      "modulo": "Nucleo de Dados Beta",
+      "ciclo": "C003",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 7,
+      "erro_relativo": 0.12651364540032534,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 83,
+      "modulo": "Estufa Hidroponica 2",
+      "ciclo": "C003",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 7,
+      "erro_relativo": 0.08498142155100087,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 74,
+      "modulo": "Estufa Hidroponica 1",
+      "ciclo": "C004",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 6,
+      "erro_relativo": 0.11009060444334108,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 84,
+      "modulo": "Estufa Hidroponica 2",
+      "ciclo": "C004",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 6,
+      "erro_relativo": 0.09716551965472994,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 104,
+      "modulo": "Laboratorio Biologico",
+      "ciclo": "C004",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 6,
+      "erro_relativo": 0.07385575589459085,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 44,
+      "modulo": "Nucleo de Dados Beta",
+      "ciclo": "C004",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 6,
+      "erro_relativo": 0.0523174855778795,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 45,
+      "modulo": "Nucleo de Dados Beta",
+      "ciclo": "C005",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 5,
+      "erro_relativo": 0.10619469026548674,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 85,
+      "modulo": "Estufa Hidroponica 2",
+      "ciclo": "C005",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 5,
+      "erro_relativo": 0.06231109044408277,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 76,
+      "modulo": "Estufa Hidroponica 1",
+      "ciclo": "C006",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 4,
+      "erro_relativo": 0.11130221130221132,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 106,
+      "modulo": "Laboratorio Biologico",
+      "ciclo": "C006",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 4,
+      "erro_relativo": 0.09983213192455812,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 107,
+      "modulo": "Laboratorio Biologico",
+      "ciclo": "C007",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 3,
+      "erro_relativo": 0.15653938855765576,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 77,
+      "modulo": "Estufa Hidroponica 1",
+      "ciclo": "C007",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 3,
+      "erro_relativo": 0.12778226271479642,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 47,
+      "modulo": "Nucleo de Dados Beta",
+      "ciclo": "C007",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 3,
+      "erro_relativo": 0.05082417582417589,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 48,
+      "modulo": "Nucleo de Dados Beta",
+      "ciclo": "C008",
+      "nivel": 2,
+      "prioridade_modulo": 3,
+      "idade_ciclos": 2,
+      "erro_relativo": 0.13592406876790836,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 91,
+      "modulo": "Laboratorio Geologico",
+      "ciclo": "C001",
+      "nivel": 2,
+      "prioridade_modulo": 4,
+      "idade_ciclos": 9,
+      "erro_relativo": 0.0889061438415995,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 95,
+      "modulo": "Laboratorio Geologico",
+      "ciclo": "C005",
+      "nivel": 2,
+      "prioridade_modulo": 4,
+      "idade_ciclos": 5,
+      "erro_relativo": 0.05789592250506871,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 139,
+      "modulo": "Deposito Criogenico",
+      "ciclo": "C009",
+      "nivel": 2,
+      "prioridade_modulo": 4,
+      "idade_ciclos": 1,
+      "erro_relativo": 0.14877145742174358,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 99,
+      "modulo": "Laboratorio Geologico",
+      "ciclo": "C009",
+      "nivel": 2,
+      "prioridade_modulo": 4,
+      "idade_ciclos": 1,
+      "erro_relativo": 0.0725,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 140,
+      "modulo": "Deposito Criogenico",
+      "ciclo": "C010",
+      "nivel": 2,
+      "prioridade_modulo": 4,
+      "idade_ciclos": 0,
+      "erro_relativo": 0.268008474576271,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Desvio de latencia acima do limite operacional"
+    },
+    {
+      "id_registro": 145,
+      "modulo": "Oficina de Manutencao",
+      "ciclo": "C005",
+      "nivel": 2,
+      "prioridade_modulo": 5,
+      "idade_ciclos": 5,
+      "erro_relativo": 0.08653429289863873,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 146,
+      "modulo": "Oficina de Manutencao",
+      "ciclo": "C006",
+      "nivel": 2,
+      "prioridade_modulo": 5,
+      "idade_ciclos": 4,
+      "erro_relativo": 0.07123874839262753,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 147,
+      "modulo": "Oficina de Manutencao",
+      "ciclo": "C007",
+      "nivel": 2,
+      "prioridade_modulo": 5,
+      "idade_ciclos": 3,
+      "erro_relativo": 0.08563861094761628,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 149,
+      "modulo": "Oficina de Manutencao",
+      "ciclo": "C009",
+      "nivel": 2,
+      "prioridade_modulo": 5,
+      "idade_ciclos": 1,
+      "erro_relativo": 0.06668654343072941,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    },
+    {
+      "id_registro": 150,
+      "modulo": "Oficina de Manutencao",
+      "ciclo": "C010",
+      "nivel": 2,
+      "prioridade_modulo": 5,
+      "idade_ciclos": 0,
+      "erro_relativo": 0.07917401681021059,
+      "motivo": "Revisar desvio da previsão ou alerta informado: Operacao nominal"
+    }
+  ],
+  "estrutura_heap": [
+    {
+      "indice": 0,
+      "pai": null,
+      "id_registro": 12,
+      "chave": [
+        1,
+        1,
+        -8,
+        -0.5009478040315045
+      ]
+    },
+    {
+      "indice": 1,
+      "pai": 0,
+      "id_registro": 16,
+      "chave": [
+        1,
+        1,
+        -4,
+        -0.0
+      ]
+    },
+    {
+      "indice": 2,
+      "pai": 0,
+      "id_registro": 69,
+      "chave": [
+        1,
+        2,
+        -1,
+        -0.40995552190782625
+      ]
+    },
+    {
+      "indice": 3,
+      "pai": 1,
+      "id_registro": 127,
+      "chave": [
+        1,
+        1,
+        -3,
+        -0.0
+      ]
+    },
+    {
+      "indice": 4,
+      "pai": 1,
+      "id_registro": 96,
+      "chave": [
+        1,
+        4,
+        -4,
+        -0.5870167512041261
+      ]
+    },
+    {
+      "indice": 5,
+      "pai": 2,
+      "id_registro": 125,
+      "chave": [
+        2,
+        1,
+        -5,
+        -0.15445026178010465
+      ]
+    },
+    {
+      "indice": 6,
+      "pai": 2,
+      "id_registro": 79,
+      "chave": [
+        1,
+        3,
+        -1,
+        -0.4606069779762355
+      ]
+    },
+    {
+      "indice": 7,
+      "pai": 3,
+      "id_registro": 105,
+      "chave": [
+        1,
+        3,
+        -5,
+        -0.4696453504607652
+      ]
+    },
+    {
+      "indice": 8,
+      "pai": 3,
+      "id_registro": 23,
+      "chave": [
+        1,
+        2,
+        -7,
+        -0.5982031283664412
+      ]
+    },
+    {
+      "indice": 9,
+      "pai": 4,
+      "id_registro": 11,
+      "chave": [
+        2,
+        1,
+        -9,
+        -0.05704403489752729
+      ]
+    },
+    {
+      "indice": 10,
+      "pai": 4,
+      "id_registro": 102,
+      "chave": [
+        2,
+        3,
+        -8,
+        -0.09784444223701211
+      ]
+    },
+    {
+      "indice": 11,
+      "pai": 5,
+      "id_registro": 118,
+      "chave": [
+        2,
+        1,
+        -2,
+        -0.18241469816272973
+      ]
+    },
+    {
+      "indice": 12,
+      "pai": 5,
+      "id_registro": 5,
+      "chave": [
+        2,
+        1,
+        -5,
+        -0.05008347245409024
+      ]
+    },
+    {
+      "indice": 13,
+      "pai": 6,
+      "id_registro": 132,
+      "chave": [
+        1,
+        4,
+        -8,
+        -0.5925149700598803
+      ]
+    },
+    {
+      "indice": 14,
+      "pai": 6,
+      "id_registro": 49,
+      "chave": [
+        1,
+        3,
+        -1,
+        -0.15149892933618847
+      ]
+    },
+    {
+      "indice": 15,
+      "pai": 7,
+      "id_registro": 130,
+      "chave": [
+        2,
+        1,
+        0,
+        -0.08973271107339832
+      ]
+    },
+    {
+      "indice": 16,
+      "pai": 7,
+      "id_registro": 50,
+      "chave": [
+        1,
+        3,
+        0,
+        -0.2081894425259004
+      ]
+    },
+    {
+      "indice": 17,
+      "pai": 8,
+      "id_registro": 24,
+      "chave": [
+        1,
+        2,
+        -6,
+        -0.0
+      ]
+    },
+    {
+      "indice": 18,
+      "pai": 8,
+      "id_registro": 88,
+      "chave": [
+        1,
+        3,
+        -2,
+        -0.0
+      ]
+    },
+    {
+      "indice": 19,
+      "pai": 9,
+      "id_registro": 32,
+      "chave": [
+        2,
+        1,
+        -8,
+        -0.09266876360996851
+      ]
+    },
+    {
+      "indice": 20,
+      "pai": 9,
+      "id_registro": 7,
+      "chave": [
+        2,
+        1,
+        -3,
+        -0.05947897049591964
+      ]
+    },
+    {
+      "indice": 21,
+      "pai": 10,
+      "id_registro": 74,
+      "chave": [
+        2,
+        3,
+        -6,
+        -0.11009060444334108
+      ]
+    },
+    {
+      "indice": 22,
+      "pai": 10,
+      "id_registro": 84,
+      "chave": [
+        2,
+        3,
+        -6,
+        -0.09716551965472994
+      ]
+    },
+    {
+      "indice": 23,
+      "pai": 11,
+      "id_registro": 27,
+      "chave": [
+        2,
+        2,
+        -3,
+        -0.05048640558742817
+      ]
+    },
+    {
+      "indice": 24,
+      "pai": 11,
+      "id_registro": 8,
+      "chave": [
+        2,
+        1,
+        -2,
+        -0.1200563923721897
+      ]
+    },
+    {
+      "indice": 25,
+      "pai": 12,
+      "id_registro": 22,
+      "chave": [
+        2,
+        2,
+        -8,
+        -0.05858277035356771
+      ]
+    },
+    {
+      "indice": 26,
+      "pai": 12,
+      "id_registro": 9,
+      "chave": [
+        2,
+        1,
+        -1,
+        -0.10525537733757111
+      ]
+    },
+    {
+      "indice": 27,
+      "pai": 13,
+      "id_registro": 119,
+      "chave": [
+        2,
+        1,
+        -1,
+        -0.07527515723270436
+      ]
+    },
+    {
+      "indice": 28,
+      "pai": 13,
+      "id_registro": 113,
+      "chave": [
+        2,
+        1,
+        -7,
+        -0.21524362986142143
+      ]
+    },
+    {
+      "indice": 29,
+      "pai": 14,
+      "id_registro": 3,
+      "chave": [
+        2,
+        1,
+        -7,
+        -0.06268050893763183
+      ]
+    },
+    {
+      "indice": 30,
+      "pai": 14,
+      "id_registro": 10,
+      "chave": [
+        2,
+        1,
+        0,
+        -0.12355469908093678
+      ]
+    },
+    {
+      "indice": 31,
+      "pai": 15,
+      "id_registro": 71,
+      "chave": [
+        2,
+        3,
+        -9,
+        -0.07243582017596728
+      ]
+    },
+    {
+      "indice": 32,
+      "pai": 15,
+      "id_registro": 70,
+      "chave": [
+        2,
+        2,
+        0,
+        -0.20689655172413784
+      ]
+    },
+    {
+      "indice": 33,
+      "pai": 16,
+      "id_registro": 35,
+      "chave": [
+        2,
+        1,
+        -5,
+        -0.17323037323037313
+      ]
+    },
+    {
+      "indice": 34,
+      "pai": 16,
+      "id_registro": 33,
+      "chave": [
+        2,
+        1,
+        -7,
+        -0.09558525718914553
+      ]
+    },
+    {
+      "indice": 35,
+      "pai": 17,
+      "id_registro": 15,
+      "chave": [
+        2,
+        1,
+        -5,
+        -0.05584251606978873
+      ]
+    },
+    {
+      "indice": 36,
+      "pai": 17,
+      "id_registro": 66,
+      "chave": [
+        1,
+        2,
+        -4,
+        -0.0
+      ]
+    },
+    {
+      "indice": 37,
+      "pai": 18,
+      "id_registro": 82,
+      "chave": [
+        2,
+        3,
+        -8,
+        -0.05040689906473936
+      ]
+    },
+    {
+      "indice": 38,
+      "pai": 18,
+      "id_registro": 106,
+      "chave": [
+        2,
+        3,
+        -4,
+        -0.09983213192455812
+      ]
+    },
+    {
+      "indice": 39,
+      "pai": 19,
+      "id_registro": 91,
+      "chave": [
+        2,
+        4,
+        -9,
+        -0.0889061438415995
+      ]
+    },
+    {
+      "indice": 40,
+      "pai": 19,
+      "id_registro": 36,
+      "chave": [
+        2,
+        1,
+        -4,
+        -0.06387434554973816
+      ]
+    },
+    {
+      "indice": 41,
+      "pai": 20,
+      "id_registro": 146,
+      "chave": [
+        2,
+        5,
+        -4,
+        -0.07123874839262753
+      ]
+    },
+    {
+      "indice": 42,
+      "pai": 20,
+      "id_registro": 43,
+      "chave": [
+        2,
+        3,
+        -7,
+        -0.12651364540032534
+      ]
+    },
+    {
+      "indice": 43,
+      "pai": 21,
+      "id_registro": 77,
+      "chave": [
+        2,
+        3,
+        -3,
+        -0.12778226271479642
+      ]
+    },
+    {
+      "indice": 44,
+      "pai": 21,
+      "id_registro": 107,
+      "chave": [
+        2,
+        3,
+        -3,
+        -0.15653938855765576
+      ]
+    },
+    {
+      "indice": 45,
+      "pai": 22,
+      "id_registro": 47,
+      "chave": [
+        2,
+        3,
+        -3,
+        -0.05082417582417589
+      ]
+    },
+    {
+      "indice": 46,
+      "pai": 22,
+      "id_registro": 147,
+      "chave": [
+        2,
+        5,
+        -3,
+        -0.08563861094761628
+      ]
+    },
+    {
+      "indice": 47,
+      "pai": 23,
+      "id_registro": 104,
+      "chave": [
+        2,
+        3,
+        -6,
+        -0.07385575589459085
+      ]
+    },
+    {
+      "indice": 48,
+      "pai": 23,
+      "id_registro": 41,
+      "chave": [
+        2,
+        3,
+        -9,
+        -0.05089621597698615
+      ]
+    },
+    {
+      "indice": 49,
+      "pai": 24,
+      "id_registro": 44,
+      "chave": [
+        2,
+        3,
+        -6,
+        -0.0523174855778795
+      ]
+    },
+    {
+      "indice": 50,
+      "pai": 24,
+      "id_registro": 128,
+      "chave": [
+        2,
+        1,
+        -2,
+        -0.0989690721649484
+      ]
+    },
+    {
+      "indice": 51,
+      "pai": 25,
+      "id_registro": 58,
+      "chave": [
+        2,
+        2,
+        -2,
+        -0.25484136794396367
+      ]
+    },
+    {
+      "indice": 52,
+      "pai": 25,
+      "id_registro": 48,
+      "chave": [
+        2,
+        3,
+        -2,
+        -0.13592406876790836
+      ]
+    },
+    {
+      "indice": 53,
+      "pai": 26,
+      "id_registro": 28,
+      "chave": [
+        2,
+        2,
+        -2,
+        -0.05370140723567158
+      ]
+    },
+    {
+      "indice": 54,
+      "pai": 26,
+      "id_registro": 51,
+      "chave": [
+        2,
+        2,
+        -9,
+        -0.16048418586489652
+      ]
+    },
+    {
+      "indice": 55,
+      "pai": 27,
+      "id_registro": 139,
+      "chave": [
+        2,
+        4,
+        -1,
+        -0.14877145742174358
+      ]
+    },
+    {
+      "indice": 56,
+      "pai": 27,
+      "id_registro": 81,
+      "chave": [
+        2,
+        3,
+        -9,
+        -0.1344573533578917
+      ]
+    },
+    {
+      "indice": 57,
+      "pai": 28,
+      "id_registro": 85,
+      "chave": [
+        2,
+        3,
+        -5,
+        -0.06231109044408277
+      ]
+    },
+    {
+      "indice": 58,
+      "pai": 28,
+      "id_registro": 115,
+      "chave": [
+        2,
+        1,
+        -5,
+        -0.05955036897202687
+      ]
+    },
+    {
+      "indice": 59,
+      "pai": 29,
+      "id_registro": 99,
+      "chave": [
+        2,
+        4,
+        -1,
+        -0.0725
+      ]
+    },
+    {
+      "indice": 60,
+      "pai": 29,
+      "id_registro": 55,
+      "chave": [
+        2,
+        2,
+        -5,
+        -0.09337989675068324
+      ]
+    },
+    {
+      "indice": 61,
+      "pai": 30,
+      "id_registro": 149,
+      "chave": [
+        2,
+        5,
+        -1,
+        -0.06668654343072941
+      ]
+    },
+    {
+      "indice": 62,
+      "pai": 30,
+      "id_registro": 65,
+      "chave": [
+        2,
+        2,
+        -5,
+        -0.2024358737774497
+      ]
+    },
+    {
+      "indice": 63,
+      "pai": 31,
+      "id_registro": 73,
+      "chave": [
+        2,
+        3,
+        -7,
+        -0.1707390196372358
+      ]
+    },
+    {
+      "indice": 64,
+      "pai": 31,
+      "id_registro": 140,
+      "chave": [
+        2,
+        4,
+        0,
+        -0.268008474576271
+      ]
+    },
+    {
+      "indice": 65,
+      "pai": 32,
+      "id_registro": 95,
+      "chave": [
+        2,
+        4,
+        -5,
+        -0.05789592250506871
+      ]
+    },
+    {
+      "indice": 66,
+      "pai": 32,
+      "id_registro": 60,
+      "chave": [
+        2,
+        2,
+        0,
+        -0.07209098862642178
+      ]
+    },
+    {
+      "indice": 67,
+      "pai": 33,
+      "id_registro": 83,
+      "chave": [
+        2,
+        3,
+        -7,
+        -0.08498142155100087
+      ]
+    },
+    {
+      "indice": 68,
+      "pai": 33,
+      "id_registro": 40,
+      "chave": [
+        2,
+        1,
+        0,
+        -0.07661761270731139
+      ]
+    },
+    {
+      "indice": 69,
+      "pai": 34,
+      "id_registro": 150,
+      "chave": [
+        2,
+        5,
+        0,
+        -0.07917401681021059
+      ]
+    },
+    {
+      "indice": 70,
+      "pai": 34,
+      "id_registro": 45,
+      "chave": [
+        2,
+        3,
+        -5,
+        -0.10619469026548674
+      ]
+    },
+    {
+      "indice": 71,
+      "pai": 35,
+      "id_registro": 145,
+      "chave": [
+        2,
+        5,
+        -5,
+        -0.08653429289863873
+      ]
+    },
+    {
+      "indice": 72,
+      "pai": 35,
+      "id_registro": 61,
+      "chave": [
+        2,
+        2,
+        -9,
+        -0.08927038626609447
+      ]
+    },
+    {
+      "indice": 73,
+      "pai": 36,
+      "id_registro": 103,
+      "chave": [
+        2,
+        3,
+        -7,
+        -0.1535882791159671
+      ]
+    },
+    {
+      "indice": 74,
+      "pai": 36,
+      "id_registro": 56,
+      "chave": [
+        1,
+        2,
+        -4,
+        -0.0
+      ]
+    },
+    {
+      "indice": 75,
+      "pai": 37,
+      "id_registro": 76,
+      "chave": [
+        2,
+        3,
+        -4,
+        -0.11130221130221132
+      ]
+    }
+  ],
+  "trie_exemplos": {
+    "com": [
+      {
+        "termo": "comunicacao",
+        "tipo": "tipo",
+        "ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ]
+      }
+    ],
+    "SNS-0x1A0": [
+      {
+        "termo": "SNS-0x1A01",
+        "tipo": "sensor",
+        "ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "termo": "SNS-0x1A02",
+        "tipo": "sensor",
+        "ids": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          17,
+          18,
+          19,
+          20
+        ]
+      },
+      {
+        "termo": "SNS-0x1A03",
+        "tipo": "sensor",
+        "ids": [
+          21,
+          22,
+          23,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ]
+      },
+      {
+        "termo": "SNS-0x1A04",
+        "tipo": "sensor",
+        "ids": [
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ]
+      },
+      {
+        "termo": "SNS-0x1A05",
+        "tipo": "sensor",
+        "ids": [
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50
+        ]
+      },
+      {
+        "termo": "SNS-0x1A06",
+        "tipo": "sensor",
+        "ids": [
+          51,
+          52,
+          53,
+          54,
+          55,
+          57,
+          58,
+          59,
+          60
+        ]
+      },
+      {
+        "termo": "SNS-0x1A07",
+        "tipo": "sensor",
+        "ids": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          67,
+          68,
+          69,
+          70
+        ]
+      },
+      {
+        "termo": "SNS-0x1A08",
+        "tipo": "sensor",
+        "ids": [
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80
+        ]
+      },
+      {
+        "termo": "SNS-0x1A09",
+        "tipo": "sensor",
+        "ids": [
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          89,
+          90
+        ]
+      },
+      {
+        "termo": "SNS-0x1A0A",
+        "tipo": "sensor",
+        "ids": [
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100
+        ]
+      },
+      {
+        "termo": "SNS-0x1A0B",
+        "tipo": "sensor",
+        "ids": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110
+        ]
+      },
+      {
+        "termo": "SNS-0x1A0C",
+        "tipo": "sensor",
+        "ids": [
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120
+        ]
+      },
+      {
+        "termo": "SNS-0x1A0D",
+        "tipo": "sensor",
+        "ids": [
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          128,
+          129,
+          130
+        ]
+      },
+      {
+        "termo": "SNS-0x1A0E",
+        "tipo": "sensor",
+        "ids": [
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140
+        ]
+      },
+      {
+        "termo": "SNS-0x1A0F",
+        "tipo": "sensor",
+        "ids": [
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150
+        ]
+      }
+    ],
+    "enf": [
+      {
+        "termo": "Enfermaria Central",
+        "tipo": "modulo",
+        "ids": [
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120
+        ]
+      }
+    ]
+  }
+}

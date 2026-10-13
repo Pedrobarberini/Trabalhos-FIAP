@@ -1,0 +1,166 @@
+
+BASE SIMULADA DA AURORA SIGER
+Arquivo: dados_aurora_siger.csv
+  linhas originais: 154
+  duplicatas removidas: 4
+  registros rejeitados: 6
+  registros validos: 144
+  modulos: 15
+  ciclos: 10
+
+Indicadores por tipo de módulo:
+                     registros  modulos  latencia_media_ms  potencia_media_w  taxa_alerta_pct
+tipo_modulo
+comunicacao                 28        3            182.509           136.225           17.857
+laboratorio                 30        3            105.375            63.944           20.000
+agricultura                 19        2             81.795            51.895           36.842
+habitacao                   18        2             61.899            42.748           33.333
+armazenamento_dados         30        3             58.219            57.275           33.333
+suporte_medico              19        2             51.981            83.528           15.789
+
+Leituras rejeitadas mantidas como falhas de telemetria:
+ id_registro           nome_modulo ciclo                              motivo_rejeicao
+          16 Relay Orbital Siger-1  C006 latencia_observada_ms: ausente ou não finito
+          66         Habitacao Sul  C006 latencia_observada_ms: ausente ou não finito
+          56       Habitacao Norte  C006 latencia_observada_ms: ausente ou não finito
+          24 Relay Orbital Siger-2  C004 latencia_observada_ms: ausente ou não finito
+         127       Bloco Cirurgico  C007 latencia_observada_ms: ausente ou não finito
+          88  Estufa Hidroponica 2  C008 latencia_observada_ms: ausente ou não finito
+
+CONSULTA: Antena Central Aurora
+ id_registro ciclo           nome_modulo codigo_sensor  latencia_prevista_ms  latencia_observada_ms status  prioridade
+           1  C001 Antena Central Aurora    SNS-0x1A01               120.370                115.840  ativo           1
+           2  C002 Antena Central Aurora    SNS-0x1A01               120.150                120.540  ativo           1
+           3  C003 Antena Central Aurora    SNS-0x1A01               120.080                128.110  ativo           1
+           4  C004 Antena Central Aurora    SNS-0x1A01               121.050                125.200  ativo           1
+           5  C005 Antena Central Aurora    SNS-0x1A01               119.490                125.790  ativo           1
+           6  C006 Antena Central Aurora    SNS-0x1A01               122.570                127.370  ativo           1
+           7  C007 Antena Central Aurora    SNS-0x1A01               119.860                127.440  ativo           1
+           8  C008 Antena Central Aurora    SNS-0x1A01               118.590                134.770 alerta           1
+           9  C009 Antena Central Aurora    SNS-0x1A01               121.050                135.290 alerta           1
+          10  C010 Antena Central Aurora    SNS-0x1A01               118.250                134.920 alerta           1
+
+INDICADORES E ERROS NUMÉRICOS
+Erro absoluto = |previsto - observado|; relativo = absoluto / |observado|.
+Até 5%: aceitável; até 15%: atenção; acima de 15%: crítico. Abaixo de 1 ms: indefinido.
+  latencia_media_ms: 94.9583
+  latencia_p95_ms: 192.5435
+  erro_absoluto_medio_ms: 11.1176
+  erro_absoluto_mediano_ms: 4.6350
+  erro_absoluto_maximo_ms: 277.6500
+  erro_relativo_medio_pct: 8.7262
+  erros_criticos: 21
+  degradacoes_criticas: 9
+  alertas_informados: 37
+  manutencoes: 8
+  leituras_relativo_indefinido: 0
+ id_registro           nome_modulo  erro_absoluto_ms  erro_percentual classificacao_erro
+          23 Relay Orbital Siger-2           277.650           59.820            critico
+          12 Relay Orbital Siger-1           187.630           50.095            critico
+          96 Laboratorio Geologico           137.720           58.702            critico
+         132   Deposito Criogenico            98.950           59.251            critico
+         105 Laboratorio Biologico            84.090           46.965            critico
+Exibidos 5 de 144 registros.
+
+Ponto flutuante: 0.1 + 0.2 = 0.30000000000000004
+Igualdade exata: False; math.isclose: True
+math.fsum das latências: 13673.99
+A mediana e os maiores erros complementam a média; erro crítico não prova causa física.
+
+REGRESSÃO LINEAR: referência nominal + ciclo -> latência observada
+treino: C001, C002, C003, C004, C005, C006 | 86 registros
+validacao: C007, C008 | 28 registros
+teste: C009, C010 | 30 registros
+Escolha por RMSE da validação: referencia
+
+VALIDACAO:
+  regressao_linear: MAE=14.346 ms; MSE=439.899 ms²; RMSE=20.974 ms; R²=0.7837
+  referencia: MAE=5.624 ms; MSE=49.088 ms²; RMSE=7.006 ms; R²=0.9759
+
+TESTE:
+  regressao_linear: MAE=11.229 ms; MSE=299.761 ms²; RMSE=17.314 ms; R²=0.8640
+  referencia: MAE=9.380 ms; MSE=243.066 ms²; RMSE=15.591 ms; R²=0.8897
+O teste fica fora do ajuste e da seleção; RMSE destaca erros grandes. R² não garante perfeição.
+
+Estimativa simulada do próximo ciclo, mantendo a referência mais recente:
+          nome_modulo codigo_sensor ciclo  latencia_prevista_ms  estimativa_proximo_ciclo_ms     metodo  previsao_fisicamente_valida
+Antena Central Aurora    SNS-0x1A01  C011               118.250                      118.250 referencia                         True
+      Bloco Cirurgico    SNS-0x1A0D  C011                51.370                       51.370 referencia                         True
+  Deposito Criogenico    SNS-0x1A0E  C011                71.820                       71.820 referencia                         True
+   Enfermaria Central    SNS-0x1A0C  C011                55.670                       55.670 referencia                         True
+ Estufa Hidroponica 1    SNS-0x1A08  C011                75.630                       75.630 referencia                         True
+ Estufa Hidroponica 2    SNS-0x1A09  C011                77.290                       77.290 referencia                         True
+      Habitacao Norte    SNS-0x1A06  C011                61.270                       61.270 referencia                         True
+        Habitacao Sul    SNS-0x1A07  C011                60.550                       60.550 referencia                         True
+Laboratorio Biologico    SNS-0x1A0B  C011                95.770                       95.770 referencia                         True
+Laboratorio Geologico    SNS-0x1A0A  C011                98.380                       98.380 referencia                         True
+ Nucleo de Dados Alfa    SNS-0x1A04  C011                46.090                       46.090 referencia                         True
+ Nucleo de Dados Beta    SNS-0x1A05  C011                48.150                       48.150 referencia                         True
+Oficina de Manutencao    SNS-0x1A0F  C011               104.000                      104.000 referencia                         True
+Relay Orbital Siger-1    SNS-0x1A02  C011               181.100                      181.100 referencia                         True
+Relay Orbital Siger-2    SNS-0x1A03  C011               186.740                      186.740 referencia                         True
+
+FILA DE PRIORIDADE: 76 alertas em memória
+Chave: nível, prioridade do módulo, -idade, -erro; desempate por ordem de entrada.
+Nível 1: degradação crítica/falha de telemetria; nível 2: demais desvios relevantes.
+1. ID 12 | Relay Orbital Siger-1 | C002 | nível 1 | prioridade 1 | idade 8
+   Motivo: Latência maior que a referência com erro relativo acima de 15%.
+2. ID 16 | Relay Orbital Siger-1 | C006 | nível 1 | prioridade 1 | idade 4
+   Motivo: Falha de qualidade da telemetria: latencia_observada_ms: ausente ou não finito
+3. ID 127 | Bloco Cirurgico | C007 | nível 1 | prioridade 1 | idade 3
+   Motivo: Falha de qualidade da telemetria: latencia_observada_ms: ausente ou não finito
+4. ID 23 | Relay Orbital Siger-2 | C003 | nível 1 | prioridade 2 | idade 7
+   Motivo: Latência maior que a referência com erro relativo acima de 15%.
+5. ID 24 | Relay Orbital Siger-2 | C004 | nível 1 | prioridade 2 | idade 6
+   Motivo: Falha de qualidade da telemetria: latencia_observada_ms: ausente ou não finito
+
+Primeiros nós do vetor do heap (ordem interna não é ordenação completa):
+  índice=0; pai=None; ID=12; chave=[1, 1, -8, -0.5009478040315045]
+  índice=1; pai=0; ID=16; chave=[1, 1, -4, -0.0]
+  índice=2; pai=0; ID=69; chave=[1, 2, -1, -0.40995552190782625]
+  índice=3; pai=1; ID=127; chave=[1, 1, -3, -0.0]
+  índice=4; pai=1; ID=96; chave=[1, 4, -4, -0.5870167512041261]
+  índice=5; pai=2; ID=125; chave=[2, 1, -5, -0.15445026178010465]
+  índice=6; pai=2; ID=79; chave=[1, 3, -1, -0.4606069779762355]
+Inserção/retirada: O(log n); raiz: O(1). Lista não ordenada: O(n) para localizar o próximo.
+
+TRIE - prefixo 'com': 1 termo(s), limite 20
+  [tipo] comunicacao | IDs: 1, 2, 3, 4, 5, 6, 7, 8 ...
+
+TRIE - prefixo 'SNS-0x1A0': 15 termo(s), limite 20
+  [sensor] SNS-0x1A01 | IDs: 1, 2, 3, 4, 5, 6, 7, 8 ...
+  [sensor] SNS-0x1A02 | IDs: 11, 12, 13, 14, 15, 17, 18, 19 ...
+  [sensor] SNS-0x1A03 | IDs: 21, 22, 23, 25, 26, 27, 28, 29 ...
+  [sensor] SNS-0x1A04 | IDs: 31, 32, 33, 34, 35, 36, 37, 38 ...
+  [sensor] SNS-0x1A05 | IDs: 41, 42, 43, 44, 45, 46, 47, 48 ...
+  [sensor] SNS-0x1A06 | IDs: 51, 52, 53, 54, 55, 57, 58, 59 ...
+  [sensor] SNS-0x1A07 | IDs: 61, 62, 63, 64, 65, 67, 68, 69 ...
+  [sensor] SNS-0x1A08 | IDs: 71, 72, 73, 74, 75, 76, 77, 78 ...
+  [sensor] SNS-0x1A09 | IDs: 81, 82, 83, 84, 85, 86, 87, 89 ...
+  [sensor] SNS-0x1A0A | IDs: 91, 92, 93, 94, 95, 96, 97, 98 ...
+  [sensor] SNS-0x1A0B | IDs: 101, 102, 103, 104, 105, 106, 107, 108 ...
+  [sensor] SNS-0x1A0C | IDs: 111, 112, 113, 114, 115, 116, 117, 118 ...
+  [sensor] SNS-0x1A0D | IDs: 121, 122, 123, 124, 125, 126, 128, 129 ...
+  [sensor] SNS-0x1A0E | IDs: 131, 132, 133, 134, 135, 136, 137, 138 ...
+  [sensor] SNS-0x1A0F | IDs: 141, 142, 143, 144, 145, 146, 147, 148 ...
+
+TRIE - prefixo 'enf': 1 termo(s), limite 20
+  [modulo] Enfermaria Central | IDs: 111, 112, 113, 114, 115, 116, 117, 118 ...
+
+DISPOSITIVOS, BASES E ELETRICIDADE
+Entrada: CSV de sensores simulados e teclado. Saída: terminal, relatório, CSVs e gráficos.
+Rede/USB seriam interfaces de aquisição; rádio e relés seriam enlaces, apenas conceituais aqui.
+Sensor SNS-0x1A01: hexadecimal 0x1A01 = decimal 6657 = binário 0001101000000001
+Antena Central Aurora: P = 48.38 V x 2.244 A = 108.56472 W (CSV: 108.55 W)
+R equivalente = V/I: 21.5597 ohms
+Trata-se de consumo elétrico aproximado; potência de rádio e energia em Wh não foram medidas.
+Coerência por tolerância propagada de arredondamento: {'registros': 144, 'coerentes': 144, 'incoerentes': 0, 'diferenca_media_w': 0.011024652777778175, 'diferenca_maxima_w': 0.033799999999999386, 'tolerancia_maxima_w': 0.0448425}
+
+DEMONSTRAÇÃO DE RETIRADA DO HEAP
+Próximo para atendimento: ID 12 | Relay Orbital Siger-1 | Latência maior que a referência com erro relativo acima de 15%.
+Restam 75 alertas. Retirada apenas em memória; resolução física não é presumida.
+
+ANÁLISE FINAL: relatorio_tecnico.md
+Resultados calculados e gráficos exportados. Leituras rejeitadas precisam de conferência.
+Os erros e a fila orientam inspeção; a previsão foi comparada à referência em ciclos reservados.
+Priorizar mensagens essenciais, conservar recursos e validar decisões com supervisão humana.

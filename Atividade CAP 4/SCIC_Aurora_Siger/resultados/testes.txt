@@ -1,0 +1,30 @@
+test_base_original_e_auditoria (test_scic.TesteCarga.test_base_original_e_auditoria) ... ok
+test_carga_invalida_preserva_sessao_anterior (test_scic.TesteCarga.test_carga_invalida_preserva_sessao_anterior) ... ok
+test_coluna_obrigatoria_ausente (test_scic.TesteCarga.test_coluna_obrigatoria_ausente) ... ok
+test_consulta_nao_interpreta_regex (test_scic.TesteCarga.test_consulta_nao_interpreta_regex) ... ok
+test_gerador_reproduz_base_sem_dependencia_de_diretorio (test_scic.TesteCarga.test_gerador_reproduz_base_sem_dependencia_de_diretorio) ... ok
+test_id_com_conflito_nao_escolhe_versao_arbitraria (test_scic.TesteCarga.test_id_com_conflito_nao_escolhe_versao_arbitraria) ... ok
+test_status_e_codigos_sao_normalizados (test_scic.TesteCarga.test_status_e_codigos_sao_normalizados) ... ok
+test_zero_infinito_e_prioridade_fracionaria_sao_rejeitados (test_scic.TesteCarga.test_zero_infinito_e_prioridade_fracionaria_sao_rejeitados) ... ok
+test_heap_desempata_em_ordem_de_entrada (test_scic.TesteEstruturas.test_heap_desempata_em_ordem_de_entrada) ... ok
+test_heap_equivale_ao_criterio_e_preserva_propriedade (test_scic.TesteEstruturas.test_heap_equivale_ao_criterio_e_preserva_propriedade) ... ok
+test_leituras_rejeitadas_continuam_como_alertas (test_scic.TesteEstruturas.test_leituras_rejeitadas_continuam_como_alertas) ... ok
+test_trie_ignora_acentos_e_caixa_preservando_termo (test_scic.TesteEstruturas.test_trie_ignora_acentos_e_caixa_preservando_termo) ... ok
+test_trie_retorna_ids_que_correspondem_aos_registros (test_scic.TesteEstruturas.test_trie_retorna_ids_que_correspondem_aos_registros) ... ok
+test_alterar_alvo_do_teste_nao_muda_modelo_nem_selecao (test_scic.TesteModelo.test_alterar_alvo_do_teste_nao_muda_modelo_nem_selecao) ... ok
+test_particoes_temporais_disjuntas (test_scic.TesteModelo.test_particoes_temporais_disjuntas) ... ok
+test_recusa_historico_insuficiente_e_datas_sobrepostas (test_scic.TesteModelo.test_recusa_historico_insuficiente_e_datas_sobrepostas) ... ok
+test_conversao_entre_bases_e_eletricidade (test_scic.TesteNumerico.test_conversao_entre_bases_e_eletricidade) ... ok
+test_erro_grande_com_latencia_menor_nao_e_degradacao (test_scic.TesteNumerico.test_erro_grande_com_latencia_menor_nao_e_degradacao) ... ok
+test_limites_e_relativo_indefinido (test_scic.TesteNumerico.test_limites_e_relativo_indefinido) ... ok
+test_metricas_conhecidas_e_r2_negativo (test_scic.TesteNumerico.test_metricas_conhecidas_e_r2_negativo) ... ok
+test_potencia_respeita_arredondamento_e_detecta_corrupcao (test_scic.TesteNumerico.test_potencia_respeita_arredondamento_e_detecta_corrupcao) ... ok
+test_r2_alvo_constante_e_amostra_unica_indefinido (test_scic.TesteNumerico.test_r2_alvo_constante_e_amostra_unica_indefinido) ... ok
+test_csv_inexistente_retorna_erro_claro (test_scic.TesteTerminal.test_csv_inexistente_retorna_erro_claro) ... ok
+test_menu_completo_funciona_fora_da_pasta_do_projeto (test_scic.TesteTerminal.test_menu_completo_funciona_fora_da_pasta_do_projeto) ... ok
+test_relatorio_exporta_relativo_indefinido_sem_nan_em_json (test_scic.TesteTerminal.test_relatorio_exporta_relativo_indefinido_sem_nan_em_json) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 7.021s
+
+OK
