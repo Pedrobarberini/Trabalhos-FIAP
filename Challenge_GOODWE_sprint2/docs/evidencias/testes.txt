@@ -1,0 +1,58 @@
+Comando: node scripts/test.mjs
+Data UTC: 2026-10-20T11:42:16.303Z
+Código de saída: 0
+
+test_candidates_are_not_part_of_training (test_models.ModelTests.test_candidates_are_not_part_of_training) ... ok
+test_extreme_anomaly_is_flagged (test_models.ModelTests.test_extreme_anomaly_is_flagged) ... ok
+test_forecast_is_repeatable_and_excludes_future_and_rejected (test_models.ModelTests.test_forecast_is_repeatable_and_excludes_future_and_rejected) ... ok
+test_forecast_refuses_insufficient_history (test_models.ModelTests.test_forecast_refuses_insufficient_history) ... ok
+test_missing_and_insufficient_history_require_review (test_models.ModelTests.test_missing_and_insufficient_history_require_review) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.662s
+
+OK
+IA disponível em http://127.0.0.1:58750
+✔ regras físicas permanecem pendentes mesmo quando a IA retorna clear (2.0974ms)
+✔ resposta de IA incompleta ou com IDs duplicados nunca libera um lote (0.7824ms)
+✔ resposta não JSON da IA é tratada como indisponibilidade (0.2842ms)
+✔ previsão com horas duplicadas não é entregue à interface (0.3272ms)
+✔ lote verifica sobreposições independentemente da ordem recebida (60.3132ms)
+✔ leituras SQLite aguardam a transação e não expõem dados revertidos (10.7157ms)
+✔ inicializações concorrentes criam o catálogo e as sessões uma única vez (69.5642ms)
+✔ formulário preserva segundos e mapeia última leitura da sessão interrompida (0.3106ms)
+✔ leitura vazia do formulário permanece ausente, sem virar consumo zero (0.1498ms)
+✔ consumo é a diferença do medidor, armazenada em Wh inteiros (20.7096ms)
+✔ sessão interrompida usa a última leitura válida e ignora medidor final (0.3214ms)
+✔ leituras ausentes ou regressivas não viram consumo cobrável (0.6373ms)
+✔ potência impossível exige revisão física (0.2618ms)
+✔ competência considera o fim no fuso de São Paulo (0.2841ms)
+✔ rejeita calendário inexistente, ausência de fuso e duração negativa (0.3631ms)
+✔ rejeita associação incorreta de usuário e unidade (0.3109ms)
+✔ valida casas decimais e rejeita NaN, infinito e valores negativos (0.1965ms)
+✔ arredondamento financeiro ocorre depois da soma, com inteiros (0.2108ms)
+✔ seed contém histórico e duas anomalias demonstráveis analisadas pela IA real (308.5884ms)
+✔ previsão usa o serviço Python e expõe avaliação temporal e baseline (317.8012ms)
+✔ registra uma sessão pela API, calcula o consumo e mantém a versão do modelo (167.8121ms)
+✔ duplicatas e intervalos simultâneos são recusados sem duplicar consumo (28.1582ms)
+✔ lote inválido é atômico e não deixa registros parciais (15.4392ms)
+✔ indisponibilidade da IA bloqueia ingestão, sem liberação silenciosa (77.2514ms)
+✔ ingestões concorrentes com o mesmo ID resultam em uma única sessão (166.2172ms)
+✔ sem histórico suficiente a IA exige revisão, em vez de marcar como normal (4.4483ms)
+✔ sessões pendentes impedem faturamento (2.5568ms)
+✔ não aprova registro sem leitura e exige justificativa na revisão (30.5512ms)
+✔ rejeição preserva registro original e trilha de auditoria (60.9916ms)
+✔ fatura reproduz 60 kWh em dois veículos, R$ 63 + R$ 20 = R$ 83 (20.3682ms)
+✔ fechamento é idempotente, imutável e encerra importações no mês (43.1602ms)
+✔ filtro do morador retorna apenas sessões e faturas da unidade escolhida (14.3738ms)
+✔ exportação CSV contém os mesmos valores da fatura (15.5811ms)
+✔ API valida JSON, meses, lote vazio e origem de mutações (63.1217ms)
+✔ servidor entrega a aplicação e diferencia rotas de arquivos ausentes (45.7529ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 35
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1860.9335

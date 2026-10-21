@@ -10,7 +10,8 @@
   "scripts": {
     "start": "node --env-file-if-exists=.env scripts/start.mjs",
     "build": "vite build",
-    "test": "node scripts/test.mjs"
+    "test": "node scripts/test.mjs",
+    "evidence": "node scripts/evidence.mjs"
   },
   "dependencies": {
     "pg": "8.16.3",
