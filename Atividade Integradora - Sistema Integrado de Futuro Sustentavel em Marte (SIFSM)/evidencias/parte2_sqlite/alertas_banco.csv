@@ -1,0 +1,3 @@
+id_alerta,prioridade,modulo,descricao
+ALERTA-1,2,Central de Energia,Consumo acima do esperado
+ALERTA-2,3,Central de Energia,[Parte 2] Sensor SEN-ENE-01; leitura 3: Consumo de 55.8 kWh acima de 50 kWh por ciclo; módulo crítico.

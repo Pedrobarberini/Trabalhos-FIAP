@@ -143,4 +143,5 @@ def main():
             conn.close()
         print("Conexão encerrada. Até logo!")
 
-main()
+if __name__ == "__main__":
+    main()

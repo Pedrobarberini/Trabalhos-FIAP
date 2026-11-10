@@ -1,0 +1,18 @@
+
+PARTE 2 - LEITURAS DO SQLITE DA AURORA SIGER
+R = (E AND C) OR O OR (NOT V)
+SEN-HAB-O2 | Habitação Principal | leitura 5 | valor 20.4 % | E=0 C=1 O=0 V=1 R=0 | normal | prioridade None
+  Medições dentro dos limites da simulação.
+SEN-ENE-01 | Central de Energia | leitura 3 | valor 55.8 kWh | E=1 C=1 O=0 V=1 R=1 | critico | prioridade 3
+  Consumo de 55.8 kWh acima de 50 kWh por ciclo; módulo crítico.
+SEN-AGR-UM: umidade fora da regra de energia/oxigênio.
+SEN-LAB-TP: temperatura fora da regra de energia/oxigênio.
+Fila calculada: 1 alerta(s).
+  prioridade 3 | SEN-ENE-01 | Central de Energia
+LED e buzzer são saídas virtuais; nenhum equipamento é desligado.
+Primeira gravação: {'novos': 1, 'ja_registrados': 0}
+Repetição da gravação: {'novos': 0, 'ja_registrados': 1}
+Alertas pendentes do banco:
+{'id_leitura': 'ALERTA-1', 'codigo_sensor': 'MOD-ENE', 'modulo': 'Central de Energia', 'ciclo': 1, 'prioridade': 2, 'motivos': ('Consumo acima do esperado',)}
+{'id_leitura': 'ALERTA-2', 'codigo_sensor': 'MOD-ENE', 'modulo': 'Central de Energia', 'ciclo': 2, 'prioridade': 3, 'motivos': ('[Parte 2] Sensor SEN-ENE-01; leitura 3: Consumo de 55.8 kWh acima de 50 kWh por ciclo; módulo crítico.',)}
+Evidências SQLite geradas; o banco de uso local foi preservado.

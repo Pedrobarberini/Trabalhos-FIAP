@@ -1,0 +1,25 @@
+{
+  "cenario": "SIFSM - sensores internos simulados da Aurora Siger",
+  "unidade_consumo": "kWh por ciclo de observacao",
+  "sensores": [
+    {"codigo": "SNS-HAB-N", "modulo": "Habitação Norte", "critico": true, "limite_consumo_kwh": 10.0, "minimo_oxigenio_pct": 19.5},
+    {"codigo": "SNS-MED", "modulo": "Suporte Médico", "critico": true, "limite_consumo_kwh": 8.0, "minimo_oxigenio_pct": 19.5},
+    {"codigo": "SNS-LAB", "modulo": "Laboratório", "critico": false, "limite_consumo_kwh": 6.0, "minimo_oxigenio_pct": 19.5},
+    {"codigo": "SNS-AGR", "modulo": "Estufa Agrícola", "critico": false, "limite_consumo_kwh": 12.0, "minimo_oxigenio_pct": 19.5}
+  ],
+  "leituras": [
+    {"id": "L001", "codigo_sensor": "SNS-HAB-N", "ciclo": 1, "consumo_kwh": 8.0, "oxigenio_pct": 21.0, "sensor_valido": true},
+    {"id": "L002", "codigo_sensor": "SNS-MED", "ciclo": 1, "consumo_kwh": 9.0, "oxigenio_pct": 21.0, "sensor_valido": true},
+    {"id": "L003", "codigo_sensor": "SNS-LAB", "ciclo": 1, "consumo_kwh": 8.0, "oxigenio_pct": 21.0, "sensor_valido": true},
+    {"id": "L004", "codigo_sensor": "SNS-AGR", "ciclo": 1, "consumo_kwh": 9.0, "oxigenio_pct": 18.8, "sensor_valido": true},
+    {"id": "L005", "codigo_sensor": "SNS-HAB-N", "ciclo": 2, "consumo_kwh": null, "oxigenio_pct": 21.0, "sensor_valido": false},
+    {"id": "L006", "codigo_sensor": "SNS-MED", "ciclo": 2, "consumo_kwh": 8.0, "oxigenio_pct": 19.5, "sensor_valido": true},
+    {"id": "L007", "codigo_sensor": "SNS-LAB", "ciclo": 2, "consumo_kwh": 7.0, "oxigenio_pct": 18.5, "sensor_valido": true},
+    {"id": "L008", "codigo_sensor": "SNS-AGR", "ciclo": 2, "consumo_kwh": -1.0, "oxigenio_pct": 20.0, "sensor_valido": true},
+    {"id": "L009", "codigo_sensor": "SNS-HAB-N", "ciclo": 3, "consumo_kwh": 11.0, "oxigenio_pct": 18.5, "sensor_valido": true},
+    {"id": "L010", "codigo_sensor": "SNS-LAB", "ciclo": 3, "consumo_kwh": 2.0, "oxigenio_pct": null, "sensor_valido": true},
+    {"id": "L011", "codigo_sensor": "SNS-MED", "ciclo": 3, "consumo_kwh": 7.0, "oxigenio_pct": 21.0, "sensor_valido": true},
+    {"id": "L012", "codigo_sensor": "SNS-AGR", "ciclo": 3, "consumo_kwh": 13.0, "oxigenio_pct": 20.0, "sensor_valido": true},
+    {"id": "L013", "codigo_sensor": "SNS-HAB-N", "ciclo": 4, "consumo_kwh": 8.0, "oxigenio_pct": 21.0, "sensor_valido": true}
+  ]
+}

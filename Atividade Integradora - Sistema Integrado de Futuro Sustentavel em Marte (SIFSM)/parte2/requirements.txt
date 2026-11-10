@@ -1,0 +1,3 @@
+# Opcional: somente para regenerar circuito_logico.png.
+# O sistema principal e os testes utilizam apenas a biblioteca padrão do Python.
+matplotlib==3.10.7

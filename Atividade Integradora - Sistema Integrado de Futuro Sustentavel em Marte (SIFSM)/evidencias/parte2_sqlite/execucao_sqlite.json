@@ -1,0 +1,352 @@
+{
+  "cenario": "Schema e dados de exemplo da Parte 1 em SQLite :memory:",
+  "estado_inicial": {
+    "modulos": 4,
+    "sensores": 4,
+    "leituras": 7,
+    "alertas": 1,
+    "manutencoes": 1
+  },
+  "analise": {
+    "regra": "R = (E and C) or O or (not V)",
+    "avaliacoes": [
+      {
+        "origem": {
+          "sensor_id": 2,
+          "sensor_codigo": "SEN-HAB-O2",
+          "sensor_tipo": "oxigenio",
+          "unidade": "%",
+          "ativo": 1,
+          "modulo_id": 2,
+          "modulo_codigo": "MOD-HAB",
+          "modulo_nome": "Habitação Principal",
+          "critico": 1,
+          "modulo_status": "ativo",
+          "leitura_id": 5,
+          "valor": 20.4,
+          "data_hora": "2026-10-01 12:00:00"
+        },
+        "resultado": {
+          "leitura": {
+            "id": "BD-S2-L5",
+            "codigo_sensor": "BD-S2",
+            "ciclo": 5,
+            "consumo_kwh": null,
+            "oxigenio_pct": 20.4,
+            "sensor_valido": true
+          },
+          "modulo": "Habitação Principal",
+          "sinais": {
+            "E": false,
+            "C": true,
+            "O": false,
+            "V": true,
+            "F": false,
+            "EC": false,
+            "R": false
+          },
+          "classificacao": "normal",
+          "prioridade": null,
+          "motivos": [
+            "Medições dentro dos limites da simulação."
+          ],
+          "led_alarme": false,
+          "buzzer": false,
+          "indicador_atencao": false
+        },
+        "motivos": [
+          "Medições dentro dos limites da simulação."
+        ],
+        "limites": {
+          "consumo_kwh": 50.0,
+          "oxigenio_pct": 19.5
+        },
+        "assinatura": "196484ad7f99045af0c37e49ddf412e9e361a2950f405300bebe76c6b467780e"
+      },
+      {
+        "origem": {
+          "sensor_id": 1,
+          "sensor_codigo": "SEN-ENE-01",
+          "sensor_tipo": "consumo",
+          "unidade": "kWh",
+          "ativo": 1,
+          "modulo_id": 1,
+          "modulo_codigo": "MOD-ENE",
+          "modulo_nome": "Central de Energia",
+          "critico": 1,
+          "modulo_status": "ativo",
+          "leitura_id": 3,
+          "valor": 55.8,
+          "data_hora": "2026-10-01 16:00:00"
+        },
+        "resultado": {
+          "leitura": {
+            "id": "BD-S1-L3",
+            "codigo_sensor": "BD-S1",
+            "ciclo": 3,
+            "consumo_kwh": 55.8,
+            "oxigenio_pct": null,
+            "sensor_valido": true
+          },
+          "modulo": "Central de Energia",
+          "sinais": {
+            "E": true,
+            "C": true,
+            "O": false,
+            "V": true,
+            "F": false,
+            "EC": true,
+            "R": true
+          },
+          "classificacao": "critico",
+          "prioridade": 3,
+          "motivos": [
+            "Consumo de 55.8 kWh acima de 50 kWh por ciclo; módulo crítico."
+          ],
+          "led_alarme": true,
+          "buzzer": true,
+          "indicador_atencao": false
+        },
+        "motivos": [
+          "Consumo de 55.8 kWh acima de 50 kWh por ciclo; módulo crítico."
+        ],
+        "limites": {
+          "consumo_kwh": 50.0,
+          "oxigenio_pct": 19.5
+        },
+        "assinatura": "f81e3ec0f4aebd81bd3e86b1a549617ddf15c60b29427a6acae2f81aedcd78f5"
+      }
+    ],
+    "fora_escopo": [
+      {
+        "sensor": "SEN-AGR-UM",
+        "tipo": "umidade",
+        "motivo": "Tipo reservado às demais análises; não exige oxigênio ou consumo fictício."
+      },
+      {
+        "sensor": "SEN-LAB-TP",
+        "tipo": "temperatura",
+        "motivo": "Tipo reservado às demais análises; não exige oxigênio ou consumo fictício."
+      }
+    ],
+    "fila": [
+      {
+        "id_leitura": "BD-S1-L3",
+        "codigo_sensor": "SEN-ENE-01",
+        "modulo": "Central de Energia",
+        "ciclo": 3,
+        "prioridade": 3,
+        "motivos": [
+          "Consumo de 55.8 kWh acima de 50 kWh por ciclo; módulo crítico."
+        ]
+      }
+    ],
+    "vetor_heap": [
+      {
+        "indice": 0,
+        "pai": null,
+        "prioridade": 3,
+        "ordem_chegada": 0,
+        "id_leitura": "BD-S1-L3"
+      }
+    ],
+    "limites": {
+      "consumo_kwh": 50.0,
+      "oxigenio_pct": 19.5
+    }
+  },
+  "primeira_gravacao": {
+    "novos": 1,
+    "ja_registrados": 0
+  },
+  "segunda_gravacao": {
+    "novos": 0,
+    "ja_registrados": 1
+  },
+  "fila_banco": [
+    {
+      "id_leitura": "ALERTA-1",
+      "codigo_sensor": "MOD-ENE",
+      "modulo": "Central de Energia",
+      "ciclo": 1,
+      "prioridade": 2,
+      "motivos": [
+        "Consumo acima do esperado"
+      ]
+    },
+    {
+      "id_leitura": "ALERTA-2",
+      "codigo_sensor": "MOD-ENE",
+      "modulo": "Central de Energia",
+      "ciclo": 2,
+      "prioridade": 3,
+      "motivos": [
+        "[Parte 2] Sensor SEN-ENE-01; leitura 3: Consumo de 55.8 kWh acima de 50 kWh por ciclo; módulo crítico."
+      ]
+    }
+  ],
+  "tabela_verdade": [
+    {
+      "E": false,
+      "C": false,
+      "O": false,
+      "V": false,
+      "F": true,
+      "EC": false,
+      "R": true
+    },
+    {
+      "E": false,
+      "C": false,
+      "O": false,
+      "V": true,
+      "F": false,
+      "EC": false,
+      "R": false
+    },
+    {
+      "E": false,
+      "C": false,
+      "O": true,
+      "V": false,
+      "F": true,
+      "EC": false,
+      "R": true
+    },
+    {
+      "E": false,
+      "C": false,
+      "O": true,
+      "V": true,
+      "F": false,
+      "EC": false,
+      "R": true
+    },
+    {
+      "E": false,
+      "C": true,
+      "O": false,
+      "V": false,
+      "F": true,
+      "EC": false,
+      "R": true
+    },
+    {
+      "E": false,
+      "C": true,
+      "O": false,
+      "V": true,
+      "F": false,
+      "EC": false,
+      "R": false
+    },
+    {
+      "E": false,
+      "C": true,
+      "O": true,
+      "V": false,
+      "F": true,
+      "EC": false,
+      "R": true
+    },
+    {
+      "E": false,
+      "C": true,
+      "O": true,
+      "V": true,
+      "F": false,
+      "EC": false,
+      "R": true
+    },
+    {
+      "E": true,
+      "C": false,
+      "O": false,
+      "V": false,
+      "F": true,
+      "EC": false,
+      "R": true
+    },
+    {
+      "E": true,
+      "C": false,
+      "O": false,
+      "V": true,
+      "F": false,
+      "EC": false,
+      "R": false
+    },
+    {
+      "E": true,
+      "C": false,
+      "O": true,
+      "V": false,
+      "F": true,
+      "EC": false,
+      "R": true
+    },
+    {
+      "E": true,
+      "C": false,
+      "O": true,
+      "V": true,
+      "F": false,
+      "EC": false,
+      "R": true
+    },
+    {
+      "E": true,
+      "C": true,
+      "O": false,
+      "V": false,
+      "F": true,
+      "EC": true,
+      "R": true
+    },
+    {
+      "E": true,
+      "C": true,
+      "O": false,
+      "V": true,
+      "F": false,
+      "EC": true,
+      "R": true
+    },
+    {
+      "E": true,
+      "C": true,
+      "O": true,
+      "V": false,
+      "F": true,
+      "EC": true,
+      "R": true
+    },
+    {
+      "E": true,
+      "C": true,
+      "O": true,
+      "V": true,
+      "F": false,
+      "EC": true,
+      "R": true
+    }
+  ],
+  "alertas_apos_gravacao": [
+    {
+      "id": 1,
+      "modulo_id": 1,
+      "descricao": "Consumo acima do esperado",
+      "nivel": "alto",
+      "resolvido": 0,
+      "data_hora": "2026-10-01 16:05:00"
+    },
+    {
+      "id": 2,
+      "modulo_id": 1,
+      "descricao": "[Parte 2] Sensor SEN-ENE-01; leitura 3: Consumo de 55.8 kWh acima de 50 kWh por ciclo; módulo crítico.",
+      "nivel": "alto",
+      "resolvido": 0,
+      "data_hora": "2026-11-09 21:15:34"
+    }
+  ]
+}

@@ -4,6 +4,7 @@ Cada entidade descreve seus campos como:
 Tipos: texto | int | float | bool | escolha | fk | auto
 """
 import sqlite3
+import math
 from datetime import datetime
 
 TIPOS_MODULO = ["energia", "habitacao", "agricultura", "laboratorio",
@@ -57,7 +58,10 @@ def converter(conn, tipo, extra, texto):
     if tipo == "int":
         return int(texto)
     if tipo == "float":
-        return float(texto.replace(",", "."))
+        valor = float(texto.replace(",", "."))
+        if not math.isfinite(valor):
+            raise ValueError("o valor deve ser um número finito.")
+        return valor
     if tipo == "bool":
         if texto.lower() in ("s", "sim", "1"):
             return 1

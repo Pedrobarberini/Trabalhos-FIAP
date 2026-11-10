@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+aurora_siger.db
+aurora_siger.db-*
+leituras_exportadas.csv

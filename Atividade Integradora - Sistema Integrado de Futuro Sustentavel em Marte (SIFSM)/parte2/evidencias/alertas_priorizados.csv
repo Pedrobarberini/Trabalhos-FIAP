@@ -1,0 +1,10 @@
+ordem,prioridade,id_leitura,sensor,modulo,ciclo,motivos
+1,1,L004,SNS-AGR,Estufa Agrícola,1,Oxigênio de 18.8% abaixo de 19.5%.
+2,1,L007,SNS-LAB,Laboratório,2,Oxigênio de 18.5% abaixo de 19.5%. Consumo de 7 kWh acima de 6 kWh por ciclo; módulo não crítico.
+3,1,L009,SNS-HAB-N,Habitação Norte,3,Oxigênio de 18.5% abaixo de 19.5%. Consumo de 11 kWh acima de 10 kWh por ciclo; módulo crítico.
+4,2,L005,SNS-HAB-N,Habitação Norte,2,Sensor informou estado inválido; valores não utilizados pelos comparadores. Medição de consumo ausente ou negativa.
+5,2,L008,SNS-AGR,Estufa Agrícola,2,Medição de consumo ausente ou negativa.
+6,2,L010,SNS-LAB,Laboratório,3,Medição de oxigênio ausente ou fora do intervalo de 0 a 100%.
+7,3,L002,SNS-MED,Suporte Médico,1,Consumo de 9 kWh acima de 8 kWh por ciclo; módulo crítico.
+8,4,L003,SNS-LAB,Laboratório,1,Consumo de 8 kWh acima de 6 kWh por ciclo; módulo não crítico.
+9,4,L012,SNS-AGR,Estufa Agrícola,3,Consumo de 13 kWh acima de 12 kWh por ciclo; módulo não crítico.

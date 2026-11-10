@@ -1,0 +1,853 @@
+{
+  "executado_em_utc": "2026-11-10T00:15:34.237318+00:00",
+  "escopo": "Responsabilidade 2 do SIFSM - circuito lógico, sensores e estruturas de dados",
+  "regra": "R = (E and C) or O or (not V)",
+  "sensores": [
+    {
+      "codigo": "SNS-HAB-N",
+      "modulo": "Habitação Norte",
+      "critico": true,
+      "limite_consumo_kwh": 10.0,
+      "minimo_oxigenio_pct": 19.5,
+      "monitorar_consumo": true,
+      "monitorar_oxigenio": true
+    },
+    {
+      "codigo": "SNS-MED",
+      "modulo": "Suporte Médico",
+      "critico": true,
+      "limite_consumo_kwh": 8.0,
+      "minimo_oxigenio_pct": 19.5,
+      "monitorar_consumo": true,
+      "monitorar_oxigenio": true
+    },
+    {
+      "codigo": "SNS-LAB",
+      "modulo": "Laboratório",
+      "critico": false,
+      "limite_consumo_kwh": 6.0,
+      "minimo_oxigenio_pct": 19.5,
+      "monitorar_consumo": true,
+      "monitorar_oxigenio": true
+    },
+    {
+      "codigo": "SNS-AGR",
+      "modulo": "Estufa Agrícola",
+      "critico": false,
+      "limite_consumo_kwh": 12.0,
+      "minimo_oxigenio_pct": 19.5,
+      "monitorar_consumo": true,
+      "monitorar_oxigenio": true
+    }
+  ],
+  "quantidade_leituras": 13,
+  "classificacoes": {
+    "normal": 4,
+    "atencao": 2,
+    "critico": 7
+  },
+  "tabela_verdade": [
+    {
+      "E": false,
+      "C": false,
+      "O": false,
+      "V": false,
+      "F": true,
+      "EC": false,
+      "R": true
+    },
+    {
+      "E": false,
+      "C": false,
+      "O": false,
+      "V": true,
+      "F": false,
+      "EC": false,
+      "R": false
+    },
+    {
+      "E": false,
+      "C": false,
+      "O": true,
+      "V": false,
+      "F": true,
+      "EC": false,
+      "R": true
+    },
+    {
+      "E": false,
+      "C": false,
+      "O": true,
+      "V": true,
+      "F": false,
+      "EC": false,
+      "R": true
+    },
+    {
+      "E": false,
+      "C": true,
+      "O": false,
+      "V": false,
+      "F": true,
+      "EC": false,
+      "R": true
+    },
+    {
+      "E": false,
+      "C": true,
+      "O": false,
+      "V": true,
+      "F": false,
+      "EC": false,
+      "R": false
+    },
+    {
+      "E": false,
+      "C": true,
+      "O": true,
+      "V": false,
+      "F": true,
+      "EC": false,
+      "R": true
+    },
+    {
+      "E": false,
+      "C": true,
+      "O": true,
+      "V": true,
+      "F": false,
+      "EC": false,
+      "R": true
+    },
+    {
+      "E": true,
+      "C": false,
+      "O": false,
+      "V": false,
+      "F": true,
+      "EC": false,
+      "R": true
+    },
+    {
+      "E": true,
+      "C": false,
+      "O": false,
+      "V": true,
+      "F": false,
+      "EC": false,
+      "R": false
+    },
+    {
+      "E": true,
+      "C": false,
+      "O": true,
+      "V": false,
+      "F": true,
+      "EC": false,
+      "R": true
+    },
+    {
+      "E": true,
+      "C": false,
+      "O": true,
+      "V": true,
+      "F": false,
+      "EC": false,
+      "R": true
+    },
+    {
+      "E": true,
+      "C": true,
+      "O": false,
+      "V": false,
+      "F": true,
+      "EC": true,
+      "R": true
+    },
+    {
+      "E": true,
+      "C": true,
+      "O": false,
+      "V": true,
+      "F": false,
+      "EC": true,
+      "R": true
+    },
+    {
+      "E": true,
+      "C": true,
+      "O": true,
+      "V": false,
+      "F": true,
+      "EC": true,
+      "R": true
+    },
+    {
+      "E": true,
+      "C": true,
+      "O": true,
+      "V": true,
+      "F": false,
+      "EC": true,
+      "R": true
+    }
+  ],
+  "resultados": [
+    {
+      "leitura": {
+        "id": "L001",
+        "codigo_sensor": "SNS-HAB-N",
+        "ciclo": 1,
+        "consumo_kwh": 8.0,
+        "oxigenio_pct": 21.0,
+        "sensor_valido": true
+      },
+      "modulo": "Habitação Norte",
+      "sinais": {
+        "E": false,
+        "C": true,
+        "O": false,
+        "V": true,
+        "F": false,
+        "EC": false,
+        "R": false
+      },
+      "classificacao": "normal",
+      "prioridade": null,
+      "motivos": [
+        "Medições dentro dos limites da simulação."
+      ],
+      "led_alarme": false,
+      "buzzer": false,
+      "indicador_atencao": false
+    },
+    {
+      "leitura": {
+        "id": "L002",
+        "codigo_sensor": "SNS-MED",
+        "ciclo": 1,
+        "consumo_kwh": 9.0,
+        "oxigenio_pct": 21.0,
+        "sensor_valido": true
+      },
+      "modulo": "Suporte Médico",
+      "sinais": {
+        "E": true,
+        "C": true,
+        "O": false,
+        "V": true,
+        "F": false,
+        "EC": true,
+        "R": true
+      },
+      "classificacao": "critico",
+      "prioridade": 3,
+      "motivos": [
+        "Consumo de 9 kWh acima de 8 kWh por ciclo; módulo crítico."
+      ],
+      "led_alarme": true,
+      "buzzer": true,
+      "indicador_atencao": false
+    },
+    {
+      "leitura": {
+        "id": "L003",
+        "codigo_sensor": "SNS-LAB",
+        "ciclo": 1,
+        "consumo_kwh": 8.0,
+        "oxigenio_pct": 21.0,
+        "sensor_valido": true
+      },
+      "modulo": "Laboratório",
+      "sinais": {
+        "E": true,
+        "C": false,
+        "O": false,
+        "V": true,
+        "F": false,
+        "EC": false,
+        "R": false
+      },
+      "classificacao": "atencao",
+      "prioridade": 4,
+      "motivos": [
+        "Consumo de 8 kWh acima de 6 kWh por ciclo; módulo não crítico."
+      ],
+      "led_alarme": false,
+      "buzzer": false,
+      "indicador_atencao": true
+    },
+    {
+      "leitura": {
+        "id": "L004",
+        "codigo_sensor": "SNS-AGR",
+        "ciclo": 1,
+        "consumo_kwh": 9.0,
+        "oxigenio_pct": 18.8,
+        "sensor_valido": true
+      },
+      "modulo": "Estufa Agrícola",
+      "sinais": {
+        "E": false,
+        "C": false,
+        "O": true,
+        "V": true,
+        "F": false,
+        "EC": false,
+        "R": true
+      },
+      "classificacao": "critico",
+      "prioridade": 1,
+      "motivos": [
+        "Oxigênio de 18.8% abaixo de 19.5%."
+      ],
+      "led_alarme": true,
+      "buzzer": true,
+      "indicador_atencao": false
+    },
+    {
+      "leitura": {
+        "id": "L005",
+        "codigo_sensor": "SNS-HAB-N",
+        "ciclo": 2,
+        "consumo_kwh": null,
+        "oxigenio_pct": 21.0,
+        "sensor_valido": false
+      },
+      "modulo": "Habitação Norte",
+      "sinais": {
+        "E": false,
+        "C": true,
+        "O": false,
+        "V": false,
+        "F": true,
+        "EC": false,
+        "R": true
+      },
+      "classificacao": "critico",
+      "prioridade": 2,
+      "motivos": [
+        "Sensor informou estado inválido; valores não utilizados pelos comparadores.",
+        "Medição de consumo ausente ou negativa."
+      ],
+      "led_alarme": true,
+      "buzzer": true,
+      "indicador_atencao": false
+    },
+    {
+      "leitura": {
+        "id": "L006",
+        "codigo_sensor": "SNS-MED",
+        "ciclo": 2,
+        "consumo_kwh": 8.0,
+        "oxigenio_pct": 19.5,
+        "sensor_valido": true
+      },
+      "modulo": "Suporte Médico",
+      "sinais": {
+        "E": false,
+        "C": true,
+        "O": false,
+        "V": true,
+        "F": false,
+        "EC": false,
+        "R": false
+      },
+      "classificacao": "normal",
+      "prioridade": null,
+      "motivos": [
+        "Medições dentro dos limites da simulação."
+      ],
+      "led_alarme": false,
+      "buzzer": false,
+      "indicador_atencao": false
+    },
+    {
+      "leitura": {
+        "id": "L007",
+        "codigo_sensor": "SNS-LAB",
+        "ciclo": 2,
+        "consumo_kwh": 7.0,
+        "oxigenio_pct": 18.5,
+        "sensor_valido": true
+      },
+      "modulo": "Laboratório",
+      "sinais": {
+        "E": true,
+        "C": false,
+        "O": true,
+        "V": true,
+        "F": false,
+        "EC": false,
+        "R": true
+      },
+      "classificacao": "critico",
+      "prioridade": 1,
+      "motivos": [
+        "Oxigênio de 18.5% abaixo de 19.5%.",
+        "Consumo de 7 kWh acima de 6 kWh por ciclo; módulo não crítico."
+      ],
+      "led_alarme": true,
+      "buzzer": true,
+      "indicador_atencao": false
+    },
+    {
+      "leitura": {
+        "id": "L008",
+        "codigo_sensor": "SNS-AGR",
+        "ciclo": 2,
+        "consumo_kwh": -1.0,
+        "oxigenio_pct": 20.0,
+        "sensor_valido": true
+      },
+      "modulo": "Estufa Agrícola",
+      "sinais": {
+        "E": false,
+        "C": false,
+        "O": false,
+        "V": false,
+        "F": true,
+        "EC": false,
+        "R": true
+      },
+      "classificacao": "critico",
+      "prioridade": 2,
+      "motivos": [
+        "Medição de consumo ausente ou negativa."
+      ],
+      "led_alarme": true,
+      "buzzer": true,
+      "indicador_atencao": false
+    },
+    {
+      "leitura": {
+        "id": "L009",
+        "codigo_sensor": "SNS-HAB-N",
+        "ciclo": 3,
+        "consumo_kwh": 11.0,
+        "oxigenio_pct": 18.5,
+        "sensor_valido": true
+      },
+      "modulo": "Habitação Norte",
+      "sinais": {
+        "E": true,
+        "C": true,
+        "O": true,
+        "V": true,
+        "F": false,
+        "EC": true,
+        "R": true
+      },
+      "classificacao": "critico",
+      "prioridade": 1,
+      "motivos": [
+        "Oxigênio de 18.5% abaixo de 19.5%.",
+        "Consumo de 11 kWh acima de 10 kWh por ciclo; módulo crítico."
+      ],
+      "led_alarme": true,
+      "buzzer": true,
+      "indicador_atencao": false
+    },
+    {
+      "leitura": {
+        "id": "L010",
+        "codigo_sensor": "SNS-LAB",
+        "ciclo": 3,
+        "consumo_kwh": 2.0,
+        "oxigenio_pct": null,
+        "sensor_valido": true
+      },
+      "modulo": "Laboratório",
+      "sinais": {
+        "E": false,
+        "C": false,
+        "O": false,
+        "V": false,
+        "F": true,
+        "EC": false,
+        "R": true
+      },
+      "classificacao": "critico",
+      "prioridade": 2,
+      "motivos": [
+        "Medição de oxigênio ausente ou fora do intervalo de 0 a 100%."
+      ],
+      "led_alarme": true,
+      "buzzer": true,
+      "indicador_atencao": false
+    },
+    {
+      "leitura": {
+        "id": "L011",
+        "codigo_sensor": "SNS-MED",
+        "ciclo": 3,
+        "consumo_kwh": 7.0,
+        "oxigenio_pct": 21.0,
+        "sensor_valido": true
+      },
+      "modulo": "Suporte Médico",
+      "sinais": {
+        "E": false,
+        "C": true,
+        "O": false,
+        "V": true,
+        "F": false,
+        "EC": false,
+        "R": false
+      },
+      "classificacao": "normal",
+      "prioridade": null,
+      "motivos": [
+        "Medições dentro dos limites da simulação."
+      ],
+      "led_alarme": false,
+      "buzzer": false,
+      "indicador_atencao": false
+    },
+    {
+      "leitura": {
+        "id": "L012",
+        "codigo_sensor": "SNS-AGR",
+        "ciclo": 3,
+        "consumo_kwh": 13.0,
+        "oxigenio_pct": 20.0,
+        "sensor_valido": true
+      },
+      "modulo": "Estufa Agrícola",
+      "sinais": {
+        "E": true,
+        "C": false,
+        "O": false,
+        "V": true,
+        "F": false,
+        "EC": false,
+        "R": false
+      },
+      "classificacao": "atencao",
+      "prioridade": 4,
+      "motivos": [
+        "Consumo de 13 kWh acima de 12 kWh por ciclo; módulo não crítico."
+      ],
+      "led_alarme": false,
+      "buzzer": false,
+      "indicador_atencao": true
+    },
+    {
+      "leitura": {
+        "id": "L013",
+        "codigo_sensor": "SNS-HAB-N",
+        "ciclo": 4,
+        "consumo_kwh": 8.0,
+        "oxigenio_pct": 21.0,
+        "sensor_valido": true
+      },
+      "modulo": "Habitação Norte",
+      "sinais": {
+        "E": false,
+        "C": true,
+        "O": false,
+        "V": true,
+        "F": false,
+        "EC": false,
+        "R": false
+      },
+      "classificacao": "normal",
+      "prioridade": null,
+      "motivos": [
+        "Medições dentro dos limites da simulação."
+      ],
+      "led_alarme": false,
+      "buzzer": false,
+      "indicador_atencao": false
+    }
+  ],
+  "atuadores_ultimas_leituras": [
+    {
+      "leitura": {
+        "id": "L013",
+        "codigo_sensor": "SNS-HAB-N",
+        "ciclo": 4,
+        "consumo_kwh": 8.0,
+        "oxigenio_pct": 21.0,
+        "sensor_valido": true
+      },
+      "modulo": "Habitação Norte",
+      "sinais": {
+        "E": false,
+        "C": true,
+        "O": false,
+        "V": true,
+        "F": false,
+        "EC": false,
+        "R": false
+      },
+      "classificacao": "normal",
+      "prioridade": null,
+      "motivos": [
+        "Medições dentro dos limites da simulação."
+      ],
+      "led_alarme": false,
+      "buzzer": false,
+      "indicador_atencao": false
+    },
+    {
+      "leitura": {
+        "id": "L011",
+        "codigo_sensor": "SNS-MED",
+        "ciclo": 3,
+        "consumo_kwh": 7.0,
+        "oxigenio_pct": 21.0,
+        "sensor_valido": true
+      },
+      "modulo": "Suporte Médico",
+      "sinais": {
+        "E": false,
+        "C": true,
+        "O": false,
+        "V": true,
+        "F": false,
+        "EC": false,
+        "R": false
+      },
+      "classificacao": "normal",
+      "prioridade": null,
+      "motivos": [
+        "Medições dentro dos limites da simulação."
+      ],
+      "led_alarme": false,
+      "buzzer": false,
+      "indicador_atencao": false
+    },
+    {
+      "leitura": {
+        "id": "L010",
+        "codigo_sensor": "SNS-LAB",
+        "ciclo": 3,
+        "consumo_kwh": 2.0,
+        "oxigenio_pct": null,
+        "sensor_valido": true
+      },
+      "modulo": "Laboratório",
+      "sinais": {
+        "E": false,
+        "C": false,
+        "O": false,
+        "V": false,
+        "F": true,
+        "EC": false,
+        "R": true
+      },
+      "classificacao": "critico",
+      "prioridade": 2,
+      "motivos": [
+        "Medição de oxigênio ausente ou fora do intervalo de 0 a 100%."
+      ],
+      "led_alarme": true,
+      "buzzer": true,
+      "indicador_atencao": false
+    },
+    {
+      "leitura": {
+        "id": "L012",
+        "codigo_sensor": "SNS-AGR",
+        "ciclo": 3,
+        "consumo_kwh": 13.0,
+        "oxigenio_pct": 20.0,
+        "sensor_valido": true
+      },
+      "modulo": "Estufa Agrícola",
+      "sinais": {
+        "E": true,
+        "C": false,
+        "O": false,
+        "V": true,
+        "F": false,
+        "EC": false,
+        "R": false
+      },
+      "classificacao": "atencao",
+      "prioridade": 4,
+      "motivos": [
+        "Consumo de 13 kWh acima de 12 kWh por ciclo; módulo não crítico."
+      ],
+      "led_alarme": false,
+      "buzzer": false,
+      "indicador_atencao": true
+    }
+  ],
+  "alertas_priorizados": [
+    {
+      "id_leitura": "L004",
+      "codigo_sensor": "SNS-AGR",
+      "modulo": "Estufa Agrícola",
+      "ciclo": 1,
+      "prioridade": 1,
+      "motivos": [
+        "Oxigênio de 18.8% abaixo de 19.5%."
+      ]
+    },
+    {
+      "id_leitura": "L007",
+      "codigo_sensor": "SNS-LAB",
+      "modulo": "Laboratório",
+      "ciclo": 2,
+      "prioridade": 1,
+      "motivos": [
+        "Oxigênio de 18.5% abaixo de 19.5%.",
+        "Consumo de 7 kWh acima de 6 kWh por ciclo; módulo não crítico."
+      ]
+    },
+    {
+      "id_leitura": "L009",
+      "codigo_sensor": "SNS-HAB-N",
+      "modulo": "Habitação Norte",
+      "ciclo": 3,
+      "prioridade": 1,
+      "motivos": [
+        "Oxigênio de 18.5% abaixo de 19.5%.",
+        "Consumo de 11 kWh acima de 10 kWh por ciclo; módulo crítico."
+      ]
+    },
+    {
+      "id_leitura": "L005",
+      "codigo_sensor": "SNS-HAB-N",
+      "modulo": "Habitação Norte",
+      "ciclo": 2,
+      "prioridade": 2,
+      "motivos": [
+        "Sensor informou estado inválido; valores não utilizados pelos comparadores.",
+        "Medição de consumo ausente ou negativa."
+      ]
+    },
+    {
+      "id_leitura": "L008",
+      "codigo_sensor": "SNS-AGR",
+      "modulo": "Estufa Agrícola",
+      "ciclo": 2,
+      "prioridade": 2,
+      "motivos": [
+        "Medição de consumo ausente ou negativa."
+      ]
+    },
+    {
+      "id_leitura": "L010",
+      "codigo_sensor": "SNS-LAB",
+      "modulo": "Laboratório",
+      "ciclo": 3,
+      "prioridade": 2,
+      "motivos": [
+        "Medição de oxigênio ausente ou fora do intervalo de 0 a 100%."
+      ]
+    },
+    {
+      "id_leitura": "L002",
+      "codigo_sensor": "SNS-MED",
+      "modulo": "Suporte Médico",
+      "ciclo": 1,
+      "prioridade": 3,
+      "motivos": [
+        "Consumo de 9 kWh acima de 8 kWh por ciclo; módulo crítico."
+      ]
+    },
+    {
+      "id_leitura": "L003",
+      "codigo_sensor": "SNS-LAB",
+      "modulo": "Laboratório",
+      "ciclo": 1,
+      "prioridade": 4,
+      "motivos": [
+        "Consumo de 8 kWh acima de 6 kWh por ciclo; módulo não crítico."
+      ]
+    },
+    {
+      "id_leitura": "L012",
+      "codigo_sensor": "SNS-AGR",
+      "modulo": "Estufa Agrícola",
+      "ciclo": 3,
+      "prioridade": 4,
+      "motivos": [
+        "Consumo de 13 kWh acima de 12 kWh por ciclo; módulo não crítico."
+      ]
+    }
+  ],
+  "vetor_heap": [
+    {
+      "indice": 0,
+      "pai": null,
+      "prioridade": 1,
+      "ordem_chegada": 2,
+      "id_leitura": "L004"
+    },
+    {
+      "indice": 1,
+      "pai": 0,
+      "prioridade": 1,
+      "ordem_chegada": 4,
+      "id_leitura": "L007"
+    },
+    {
+      "indice": 2,
+      "pai": 0,
+      "prioridade": 1,
+      "ordem_chegada": 6,
+      "id_leitura": "L009"
+    },
+    {
+      "indice": 3,
+      "pai": 1,
+      "prioridade": 2,
+      "ordem_chegada": 7,
+      "id_leitura": "L010"
+    },
+    {
+      "indice": 4,
+      "pai": 1,
+      "prioridade": 2,
+      "ordem_chegada": 3,
+      "id_leitura": "L005"
+    },
+    {
+      "indice": 5,
+      "pai": 2,
+      "prioridade": 3,
+      "ordem_chegada": 0,
+      "id_leitura": "L002"
+    },
+    {
+      "indice": 6,
+      "pai": 2,
+      "prioridade": 2,
+      "ordem_chegada": 5,
+      "id_leitura": "L008"
+    },
+    {
+      "indice": 7,
+      "pai": 3,
+      "prioridade": 4,
+      "ordem_chegada": 1,
+      "id_leitura": "L003"
+    },
+    {
+      "indice": 8,
+      "pai": 3,
+      "prioridade": 4,
+      "ordem_chegada": 8,
+      "id_leitura": "L012"
+    }
+  ],
+  "encaminhados_na_sessao": [],
+  "demonstracao_retirada": {
+    "retirado_na_copia": {
+      "id_leitura": "L004",
+      "codigo_sensor": "SNS-AGR",
+      "modulo": "Estufa Agrícola",
+      "ciclo": 1,
+      "prioridade": 1,
+      "motivos": [
+        "Oxigênio de 18.8% abaixo de 19.5%."
+      ]
+    },
+    "pendentes_na_copia": 8,
+    "pendentes_na_fila_original": 9
+  }
+}

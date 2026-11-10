@@ -1,0 +1,89 @@
+SIFSM - AURORA SIGER | CIRCUITO LÓGICO, SENSORES E ESTRUTURAS DE DADOS
+E: consumo alto; C: módulo crítico; O: oxigênio crítico; V: medições válidas.
+Regra: R = (E AND C) OR O OR (NOT V). F = NOT V.
+Limites de energia por ciclo e oxigênio são parâmetros didáticos da simulação.
+
+TABELA-VERDADE - R = (E AND C) OR O OR (NOT V)
+E C O V | F EC | R
+0 0 0 0 | 1 0 | 1
+0 0 0 1 | 0 0 | 0
+0 0 1 0 | 1 0 | 1
+0 0 1 1 | 0 0 | 1
+0 1 0 0 | 1 0 | 1
+0 1 0 1 | 0 0 | 0
+0 1 1 0 | 1 0 | 1
+0 1 1 1 | 0 0 | 1
+1 0 0 0 | 1 0 | 1
+1 0 0 1 | 0 0 | 0
+1 0 1 0 | 1 0 | 1
+1 0 1 1 | 0 0 | 1
+1 1 0 0 | 1 1 | 1
+1 1 0 1 | 0 1 | 1
+1 1 1 0 | 1 1 | 1
+1 1 1 1 | 0 1 | 1
+
+LEITURAS E SAÍDAS DO CIRCUITO
+ID    SENSOR       CICLO E C O V F | R | CLASSIFICAÇÃO / PRIORIDADE
+L001  SNS-HAB-N        1 0 1 0 1 0 | 0 | normal        / -
+L002  SNS-MED          1 1 1 0 1 0 | 1 | critico       / 3
+L003  SNS-LAB          1 1 0 0 1 0 | 0 | atencao       / 4
+L004  SNS-AGR          1 0 0 1 1 0 | 1 | critico       / 1
+L005  SNS-HAB-N        2 0 1 0 0 1 | 1 | critico       / 2
+L006  SNS-MED          2 0 1 0 1 0 | 0 | normal        / -
+L007  SNS-LAB          2 1 0 1 1 0 | 1 | critico       / 1
+L008  SNS-AGR          2 0 0 0 0 1 | 1 | critico       / 2
+L009  SNS-HAB-N        3 1 1 1 1 0 | 1 | critico       / 1
+L010  SNS-LAB          3 0 0 0 0 1 | 1 | critico       / 2
+L011  SNS-MED          3 0 1 0 1 0 | 0 | normal        / -
+L012  SNS-AGR          3 1 0 0 1 0 | 0 | atencao       / 4
+L013  SNS-HAB-N        4 0 1 0 1 0 | 0 | normal        / -
+Resumo: normal=4, atencao=2, critico=7
+
+ATUADORES VIRTUAIS - ÚLTIMA LEITURA DE CADA SENSOR
+SNS-HAB-N | ciclo 4 | LED alarme=0 | buzzer=0 | indicador atenção=0
+SNS-MED | ciclo 3 | LED alarme=0 | buzzer=0 | indicador atenção=0
+SNS-LAB | ciclo 3 | LED alarme=1 | buzzer=1 | indicador atenção=0
+SNS-AGR | ciclo 3 | LED alarme=0 | buzzer=0 | indicador atenção=1
+A saída combinacional muda com a leitura; o histórico e os alertas anteriores permanecem.
+Não há acionamento de hardware nem desligamento de sistemas essenciais.
+
+CONSULTA POR CÓDIGO - TABELA HASH
+{'codigo': 'SNS-HAB-N', 'modulo': 'Habitação Norte', 'critico': True, 'limite_consumo_kwh': 10.0, 'minimo_oxigenio_pct': 19.5, 'monitorar_consumo': True, 'monitorar_oxigenio': True}
+
+FILA DE PRIORIDADE: 9 alerta(s) pendente(s)
+1. prioridade 1 | L004 | Estufa Agrícola | ciclo 1
+   Oxigênio de 18.8% abaixo de 19.5%.
+2. prioridade 1 | L007 | Laboratório | ciclo 2
+   Oxigênio de 18.5% abaixo de 19.5%. Consumo de 7 kWh acima de 6 kWh por ciclo; módulo não crítico.
+3. prioridade 1 | L009 | Habitação Norte | ciclo 3
+   Oxigênio de 18.5% abaixo de 19.5%. Consumo de 11 kWh acima de 10 kWh por ciclo; módulo crítico.
+4. prioridade 2 | L005 | Habitação Norte | ciclo 2
+   Sensor informou estado inválido; valores não utilizados pelos comparadores. Medição de consumo ausente ou negativa.
+5. prioridade 2 | L008 | Estufa Agrícola | ciclo 2
+   Medição de consumo ausente ou negativa.
+6. prioridade 2 | L010 | Laboratório | ciclo 3
+   Medição de oxigênio ausente ou fora do intervalo de 0 a 100%.
+7. prioridade 3 | L002 | Suporte Médico | ciclo 1
+   Consumo de 9 kWh acima de 8 kWh por ciclo; módulo crítico.
+8. prioridade 4 | L003 | Laboratório | ciclo 1
+   Consumo de 8 kWh acima de 6 kWh por ciclo; módulo não crítico.
+9. prioridade 4 | L012 | Estufa Agrícola | ciclo 3
+   Consumo de 13 kWh acima de 12 kWh por ciclo; módulo não crítico.
+Menor número = maior urgência. Empates respeitam a ordem de chegada.
+
+VETOR INTERNO DO HEAP - NÃO É UMA LISTA COMPLETAMENTE ORDENADA
+{'indice': 0, 'pai': None, 'prioridade': 1, 'ordem_chegada': 2, 'id_leitura': 'L004'}
+{'indice': 1, 'pai': 0, 'prioridade': 1, 'ordem_chegada': 4, 'id_leitura': 'L007'}
+{'indice': 2, 'pai': 0, 'prioridade': 1, 'ordem_chegada': 6, 'id_leitura': 'L009'}
+{'indice': 3, 'pai': 1, 'prioridade': 2, 'ordem_chegada': 7, 'id_leitura': 'L010'}
+{'indice': 4, 'pai': 1, 'prioridade': 2, 'ordem_chegada': 3, 'id_leitura': 'L005'}
+{'indice': 5, 'pai': 2, 'prioridade': 3, 'ordem_chegada': 0, 'id_leitura': 'L002'}
+{'indice': 6, 'pai': 2, 'prioridade': 2, 'ordem_chegada': 5, 'id_leitura': 'L008'}
+{'indice': 7, 'pai': 3, 'prioridade': 4, 'ordem_chegada': 1, 'id_leitura': 'L003'}
+{'indice': 8, 'pai': 3, 'prioridade': 4, 'ordem_chegada': 8, 'id_leitura': 'L012'}
+
+RETIRADA DO ALERTA MAIS URGENTE EM UMA CÓPIA DA FILA
+{'retirado_na_copia': {'id_leitura': 'L004', 'codigo_sensor': 'SNS-AGR', 'modulo': 'Estufa Agrícola', 'ciclo': 1, 'prioridade': 1, 'motivos': ('Oxigênio de 18.8% abaixo de 19.5%.',)}, 'pendentes_na_copia': 8, 'pendentes_na_fila_original': 9}
+Encaminhar não significa resolver a ocorrência física; decisões operacionais exigem conferência humana.
+
+Evidências geradas: execucao.json, tabela_verdade.csv e alertas_priorizados.csv.
